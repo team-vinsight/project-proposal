@@ -1,0 +1,42 @@
+\section{Problem Statement}
+
+\subsection{Limitations of GPS in Challenging Environments}
+The efficacy of Global Navigation Satellite Systems (GNSS), particularly GPS, is severely hampered in environments that present physical obstructions or signal interference. GPS signals are inherently weak or entirely absent in indoor spaces, underground areas, and remote locations, rendering traditional satellite-based navigation ineffective.
+
+In dense urban environments, commonly referred to as urban canyons, tall buildings obstruct the direct line-of-sight (LoS) to satellites. This leads to pervasive signal blockages and severe multipath propagation, where signals bounce off structures, distorting their accuracy. Such conditions cause a drastic degradation in positioning accuracy, potentially dropping from several meters to hundreds of meters \cite{ref4,ref5}. Similarly, under-canopy forest environments present dense obstacles and significant GNSS signal interference, making autonomous navigation for data collection exceptionally challenging.
+
+Beyond direct signal issues, these environments often exhibit varying lighting conditions, low texture, or the presence of dynamic objects. These factors further complicate visual navigation components that might otherwise compensate for GPS loss \cite{ref8}. The problem is not merely a singular environmental factor, but a synergistic combination of factors. For instance, urban canyons induce both signal blockage and multipath effects, while simultaneously presenting visually complex scenes with dynamic elements. This multi-faceted degradation creates a compounding effect on navigation challenges, necessitating solutions that address multiple, interconnected environmental challenges simultaneously.
+
+\subsection{Impact on Autonomous UAV Operations}
+The limitations of GPS in challenging environments have profound implications for autonomous UAV operations. The primary challenge lies in maintaining precise positioning and navigation capabilities when satellite-based systems become unreliable or completely unavailable. Inaccurate localization leads to significant deviations from planned flight paths, as evidenced by experiments where drones deviated by 1 to 5 meters or more in urban settings \cite{ref9}.
+
+Such navigation disruptions affect both autonomous and manual flight, particularly during critical phases like landing and obstacle avoidance. In loosely coupled navigation systems, a complete data outage can occur when fewer than four satellites are visible, leading to a loss of positional awareness. Unreliable navigation consequently jeopardizes the safety of UAV missions, especially in complex or dynamic environments where collision avoidance and precise task execution are paramount. 
+
+This inability to operate reliably in GPS-restricted areas severely constrains the potential applications and mission capabilities of autonomous UAVs. This highlights a ``last mile'' problem for UAV autonomy. While long-range navigation in open areas might be feasible with GPS, the most complex and often most valuable operations, such as precise delivery in a city, detailed indoor inspection, or surveying under dense foliage, occur precisely where GPS is least reliable. Solving this ``last mile'' navigation problem with robust VINS is crucial for unlocking the full potential and economic value of autonomous UAVs in high-impact, real-world scenarios, moving beyond simple line-of-sight operations.
+
+\subsection{Summary}
+GPS-based navigation becomes unreliable or completely unavailable in environments with signal obstructions such as urban canyons, forests, and indoor areas. In these settings, satellite signals suffer from blockage, multipath propagation, and interference, leading to large localization errors. This severely limits UAV autonomy, especially in critical operations like landing, obstacle avoidance, or precise deliveries. While inertial and vision-based navigation systems (VINS) can compensate for GPS loss, they face their own challenges—IMU drift over time, difficulty tracking features in low-texture or dynamic scenes, scale ambiguity during initialization, high computational demands, and degraded performance in poor visual conditions (e.g., low light or motion blur). Together, these issues make reliable real-time navigation in GPS-denied environments difficult to achieve.
+Based on the problems described previously, the research problem of this project can be succinctly stated as:
+"Developing a robust, efficient Autonomous UAV that uses Visual-Inertial Navigation System (VINS) for localization and navigation in GPS-denied and visually degraded environments."
+
+
+% \subsection{Problems Addressed in This Research}
+
+% \begin{itemize}
+%     \item \textbf{Inertial-Only IMU Drift:} Inertial-only navigation (using only IMU data) accumulates sensor errors over time, causing the estimated trajectory to drift unboundedly \cite{ref9}. In practice, biases and noise integrate into large position/attitude errors if not corrected by external references. Without GPS or vision updates, this long-term drift makes pure INS unreliable for GPS-denied flight.
+    
+%     \begin{figure}[H]
+%         \centering
+%         \includegraphics[width=0.75\textwidth]{figures/imu_drift.png}
+%         \caption{Visualization of IMU drift in UAVs \cite{palantir2023}.}
+%         \label{fig:imu_drift}
+%     \end{figure}
+
+%     \item \textbf{Visual Tracking in Low-Texture/Dynamic Scenes:} Vision-based navigation relies on tracking environmental features. In low-texture or uniform areas (e.g., blank walls or repetitive patterns), feature descriptors lack distinctiveness and matching often fails \cite{ref10}. Likewise, highly dynamic scenes with many moving objects leave few stable landmarks, causing the visual tracker (and thus VINS) to lose lock or fail completely \cite{ref10}.
+    
+%     \item \textbf{VINS Initialization and Scale Ambiguity:} Monocular VINS cannot infer absolute scale from vision alone, so the initialized map’s scale is ambiguous \cite{ref11}. Proper initialization also requires rich motion (translations/rotations) to excite all degrees of freedom; for example, VINS-Mono must execute full 3-axis maneuvers to observe gravity and scale, which is time-consuming and resource-intensive \cite{ref9}. If these conditions are not met, the estimator may diverge or converge to a wrong scale.
+    
+%     \item \textbf{Real-Time VINS Computational Demands:} Tightly-coupled VINS algorithms fuse high-rate IMU and image data via nonlinear optimization or filtering, which is computationally expensive. For instance, VINS-Mono’s sliding-window bundle-adjustment ran at only $\sim$9\,Hz on typical UAV hardware, failing to meet real-time requirements on a low-cost platform \cite{ref9}. In general, ensuring real-time performance requires significant CPU/GPU resources, which may be beyond small UAV capabilities.
+    
+%     \item \textbf{Compound Environmental Degradation (Poor Lighting, Motion Blur, Dynamic Objects):} In severely degraded conditions combining multiple factors, VINS performance collapses. Extensive motion blur (from fast motion or low light) prevents reliable feature tracking \cite{ref12}, and scenes dominated by dynamic objects (e.g., $>$80\% moving targets) provide too few static cues, leading to localization failure \cite{ref11}. Together, these adverse effects can overwhelm the system, causing the estimator to lose track and diverge.
+% \end{itemize}

@@ -1,0 +1,7 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces GNSS signal classification with LOS/NLOS satellites and visual landmarks in urban environments \blx@tocontentsinit {0}\cite {imgref1}.}}{2}{}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Visualization of IMU drift in UAVs \blx@tocontentsinit {0}\cite {imgref2}.}}{5}{}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Image depicting the accelerometers and gyroscopes in the three axes of movement. Each accelerometer and gyroscope is positioned at $90^{\circ }$ to the others (orthogonally). Accelerometers measure motion along each axis and each gyroscope measures angular velocity around each axis.\blx@tocontentsinit {0}\cite {ref19}}}{9}{}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Loosely-coupled architecture which uses an IMU and a GNSS receiver. Similarly, instead of a GNSS receiver, a VINS system can use a visual odometry system.\blx@tocontentsinit {0}\cite {ref26}}}{12}{}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Tightly-coupled architecture which uses an IMU and a GNSS receiver. The GNSS system can be replaced with a visual odometry system.\blx@tocontentsinit {0}\cite {ref26}}}{13}{}%
+\contentsline {figure}{\numberline {6}{\ignorespaces System Architecture}}{23}{}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Research Timeline}}{31}{}%

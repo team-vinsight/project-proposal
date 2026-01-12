@@ -1,0 +1,23 @@
+\section{Introduction}
+
+\subsection{Overview of UAVs and Their Applications}
+Unmanned Aerial Vehicles (UAVs), commonly referred to as drones, have significantly transformed various sectors, ranging from agriculture to logistics \cite{ref1}. Their versatility and capacity to access remote or hazardous areas have positioned them as invaluable tools across numerous applications \cite{ref2}. These applications encompass aerial mapping, surveillance, and inspection, as well as autonomous flight operations, facilitating data collection in environments otherwise inaccessible to human operators. The expanding utility of UAVs in diverse and complex settings underscores the increasing demand for advanced navigational capabilities.
+
+\subsection{The Critical Role of Navigation Systems}
+Autonomous UAV operation is fundamentally dependent on accurate and robust navigation and localization capabilities. Precise estimations of a UAV's position and orientation are indispensable for executing critical tasks such as obstacle avoidance, sophisticated path planning, and maintaining flight stability throughout a mission. Without reliable navigation, the potential of autonomous drones remains severely constrained, limiting their deployment to less complex, open environments \cite{ref3}.
+
+\subsection{Challenges in GPS-Restricted Environments}
+While the Global Positioning System (GPS) serves as a primary navigation tool for UAVs in many scenarios, its reliability diminishes significantly or becomes entirely unavailable in certain challenging environments. These challenging areas include dense urban landscapes, often termed ``urban canyons,'' indoor facilities, under-canopy forest environments, and remote regions characterized by obstructed satellite visibility \cite{ref4,ref5}. The expansion of UAV applications into these previously inaccessible or difficult environments directly highlights the limitations of GPS, making the development of alternative or complementary navigation solutions imperative. This evolution of UAV capabilities necessitates more sophisticated and robust navigation systems that are less reliant on external signals and can leverage onboard sensor data.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/gnss_signal.jpg}
+    \caption{GNSS signal classification with LOS/NLOS satellites and visual landmarks in urban environments \cite{imgref1}.}
+    \label{fig:gnss}
+\end{figure}
+
+\subsection{Introduction to Visual-Inertial Navigation Systems (VINS)}
+Visual-Inertial Navigation Systems (VINS) have emerged as a potent solution to overcome the limitations inherent in GPS-dependent navigation. VINS integrates visual information captured by onboard cameras with motion data provided by Inertial Measurement Units (IMUs). This fusion allows VINS to leverage computer vision algorithms for feature extraction and tracking, combined with advanced sensor fusion techniques, to accurately estimate the UAV's position, velocity, and orientation, even in the complete absence of GPS signals. The ability of VINS to provide precise, real-time pose estimation in challenging conditions positions it as a foundational technology for next-generation UAV autonomy. This means VINS is crucial for enabling UAVs to perform complex tasks, avoid obstacles, and maintain safety in dynamic and unstructured environments, pushing the boundaries of what autonomous drones can achieve \cite{ref6,ref7}.
+
+\subsection{Purpose and Scope of the Project}
+This project proposes the implementation of a robust VINS specifically engineered for autonomous UAV operation in GPS-restricted environments. The primary aim is to significantly enhance navigation accuracy, reliability, and safety in such challenging scenarios. The project's scope encompasses a comprehensive analysis of existing VINS technologies, localization technologies, the identification of key challenges, and the subsequent development of a methodology that incorporates advanced techniques to overcome these identified limitations.

@@ -1,0 +1,1462 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{ref1}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=0d6ec900a9517715c2d260da984c13cd}{%
+           family={Toscano},
+           familyi={T\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{940d0b45a905f436abbb3c11925e5045}
+      \strng{fullhash}{940d0b45a905f436abbb3c11925e5045}
+      \strng{fullhashraw}{940d0b45a905f436abbb3c11925e5045}
+      \strng{bibnamehash}{940d0b45a905f436abbb3c11925e5045}
+      \strng{authorbibnamehash}{940d0b45a905f436abbb3c11925e5045}
+      \strng{authornamehash}{940d0b45a905f436abbb3c11925e5045}
+      \strng{authorfullhash}{940d0b45a905f436abbb3c11925e5045}
+      \strng{authorfullhashraw}{940d0b45a905f436abbb3c11925e5045}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{month}{1}
+      \field{title}{Unmanned Aerial Vehicle for Precision Agriculture: A Review}
+      \field{year}{2024}
+      \field{pages}{1\bibrangedash 1}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1109/access.2024.3401018
+      \endverb
+    \endentry
+    \entry{ref2}{misc}{}{}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Apr. 12, 2020}
+      \field{title}{List of unmanned aerial vehicle applications}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/List_of_unmanned_aerial_vehicle_applications
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/List_of_unmanned_aerial_vehicle_applications
+      \endverb
+    \endentry
+    \entry{ref3}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=5a9f0bff5117bdb2c2e91be1737cfe66}{%
+           family={Cong},
+           familyi={C\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{a795d731882bf35567f7e3de3939f106}
+      \strng{fullhash}{a795d731882bf35567f7e3de3939f106}
+      \strng{fullhashraw}{a795d731882bf35567f7e3de3939f106}
+      \strng{bibnamehash}{a795d731882bf35567f7e3de3939f106}
+      \strng{authorbibnamehash}{a795d731882bf35567f7e3de3939f106}
+      \strng{authornamehash}{a795d731882bf35567f7e3de3939f106}
+      \strng{authorfullhash}{a795d731882bf35567f7e3de3939f106}
+      \strng{authorfullhashraw}{a795d731882bf35567f7e3de3939f106}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{month}{1}
+      \field{number}{15}
+      \field{title}{Adaptive Covariance Matrix for UAV-Based Visual-Inertial Navigation Systems Using Gaussian Formulas}
+      \field{volume}{25}
+      \field{year}{2025}
+      \field{pages}{4745}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s25154745
+      \endverb
+    \endentry
+    \entry{ref4}{inproceedings}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=a25fb45164e4bda3bf92562479404eb9}{%
+           family={Peretic},
+           familyi={P\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{d2dad83771432eb73c5133657586e271}
+      \strng{fullhash}{d2dad83771432eb73c5133657586e271}
+      \strng{fullhashraw}{d2dad83771432eb73c5133657586e271}
+      \strng{bibnamehash}{d2dad83771432eb73c5133657586e271}
+      \strng{authorbibnamehash}{d2dad83771432eb73c5133657586e271}
+      \strng{authornamehash}{d2dad83771432eb73c5133657586e271}
+      \strng{authorfullhash}{d2dad83771432eb73c5133657586e271}
+      \strng{authorfullhashraw}{d2dad83771432eb73c5133657586e271}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. IEEE/ION Position Location and Navigation Symp. (PLANS)}
+      \field{month}{4}
+      \field{title}{Statistical Analysis of GNSS Multipath Errors in Urban Canyons}
+      \field{year}{2025}
+      \field{pages}{1216\bibrangedash 1225}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/plans61210.2025.11028411
+      \endverb
+    \endentry
+    \entry{ref5}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=55d93e7a9a3328bb0814c71b665ef3b5}{%
+           family={Wen},
+           familyi={W\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=a68268d7be0293deb23e8dde127c58d2}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=3383091410b0260597164b7fb4720bc8}{%
+           family={Hsu},
+           familyi={H\bibinitperiod},
+           given={L.-T.},
+           giveni={L\bibinithyphendelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{bccecc059fcbdaa9814aa977b44a1522}
+      \strng{fullhash}{8ff27ad7a74e4960d7051e25816a734c}
+      \strng{fullhashraw}{8ff27ad7a74e4960d7051e25816a734c}
+      \strng{bibnamehash}{8ff27ad7a74e4960d7051e25816a734c}
+      \strng{authorbibnamehash}{8ff27ad7a74e4960d7051e25816a734c}
+      \strng{authornamehash}{bccecc059fcbdaa9814aa977b44a1522}
+      \strng{authorfullhash}{8ff27ad7a74e4960d7051e25816a734c}
+      \strng{authorfullhashraw}{8ff27ad7a74e4960d7051e25816a734c}
+      \field{extraname}{1}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Navigation}
+      \field{month}{1}
+      \field{number}{3}
+      \field{title}{3D Vision Aided GNSS Real-Time Kinematic Positioning for Autonomous Systems in Urban Canyons}
+      \field{volume}{70}
+      \field{year}{2023}
+      \field{pages}{navi.590\bibrangedash navi.590}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.33012/navi.590
+      \endverb
+    \endentry
+    \entry{imgref1}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=55d93e7a9a3328bb0814c71b665ef3b5}{%
+           family={Wen},
+           familyi={W\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=a68268d7be0293deb23e8dde127c58d2}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=3383091410b0260597164b7fb4720bc8}{%
+           family={Hsu},
+           familyi={H\bibinitperiod},
+           given={L.-T.},
+           giveni={L\bibinithyphendelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{bccecc059fcbdaa9814aa977b44a1522}
+      \strng{fullhash}{8ff27ad7a74e4960d7051e25816a734c}
+      \strng{fullhashraw}{8ff27ad7a74e4960d7051e25816a734c}
+      \strng{bibnamehash}{8ff27ad7a74e4960d7051e25816a734c}
+      \strng{authorbibnamehash}{8ff27ad7a74e4960d7051e25816a734c}
+      \strng{authornamehash}{bccecc059fcbdaa9814aa977b44a1522}
+      \strng{authorfullhash}{8ff27ad7a74e4960d7051e25816a734c}
+      \strng{authorfullhashraw}{8ff27ad7a74e4960d7051e25816a734c}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-08-20}
+      \field{title}{3D Vision Aided GNSS Real-Time Kinematic Positioning for Autonomous Systems in Urban Canyons}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.polyu.edu.hk/aae/ipn-lab/us/publications/Fullpaper/3D%20Vision%20Aided%20GNSS%20Real-Time%20Kinematic%20Positioning%20for%20Autonomous%20Systems%20in%20Urban%20Canyons.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.polyu.edu.hk/aae/ipn-lab/us/publications/Fullpaper/3D%20Vision%20Aided%20GNSS%20Real-Time%20Kinematic%20Positioning%20for%20Autonomous%20Systems%20in%20Urban%20Canyons.pdf
+      \endverb
+    \endentry
+    \entry{ref6}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=0d4a8cff3cc7aa7cf7a8e2b46e93005e}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=8c0d8d495d30364a6fdc14d3ee19f5b7}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=16ae0989f5e1d256ef0cfff56b31723a}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Q.},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=4f899688e5c80dfb927544f337baafbd}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=c9a3728dcc2397d1bab78a791b51779b}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{97aabe3bac22bc2411d4bdbbbebcfa34}
+      \strng{fullhash}{a9607b95d4b8eed9ba76934168c71e4b}
+      \strng{fullhashraw}{a9607b95d4b8eed9ba76934168c71e4b}
+      \strng{bibnamehash}{a9607b95d4b8eed9ba76934168c71e4b}
+      \strng{authorbibnamehash}{a9607b95d4b8eed9ba76934168c71e4b}
+      \strng{authornamehash}{97aabe3bac22bc2411d4bdbbbebcfa34}
+      \strng{authorfullhash}{a9607b95d4b8eed9ba76934168c71e4b}
+      \strng{authorfullhashraw}{a9607b95d4b8eed9ba76934168c71e4b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Drones}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Visual–Inertial Autonomous UAV Navigation in Complex Illumination and Highly Cluttered Under-Canopy Environments}
+      \field{volume}{9}
+      \field{year}{2025}
+      \field{pages}{27\bibrangedash 27}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/drones9010027
+      \endverb
+    \endentry
+    \entry{ref7}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=8b0802fe2dc07bf5a2e1df652138380a}{%
+           family={Hashim},
+           familyi={H\bibinitperiod},
+           given={H.\bibnamedelimi A.},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8b0802fe2dc07bf5a2e1df652138380a}
+      \strng{fullhash}{8b0802fe2dc07bf5a2e1df652138380a}
+      \strng{fullhashraw}{8b0802fe2dc07bf5a2e1df652138380a}
+      \strng{bibnamehash}{8b0802fe2dc07bf5a2e1df652138380a}
+      \strng{authorbibnamehash}{8b0802fe2dc07bf5a2e1df652138380a}
+      \strng{authornamehash}{8b0802fe2dc07bf5a2e1df652138380a}
+      \strng{authorfullhash}{8b0802fe2dc07bf5a2e1df652138380a}
+      \strng{authorfullhashraw}{8b0802fe2dc07bf5a2e1df652138380a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Results in Engineering}
+      \field{month}{12}
+      \field{title}{Advances in UAV Avionics Systems Architecture, Classification and Integration: A Comprehensive Review and Future Perspectives}
+      \field{volume}{25}
+      \field{year}{2024}
+      \field{pages}{103786\bibrangedash 103786}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.rineng.2024.103786
+      \endverb
+    \endentry
+    \entry{ref8}{misc}{}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Accessed: Aug. 18, 2025}
+      \field{title}{Moving away from GPS to a Multi-Sensor, Inertial-Centered Architecture}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.geoweeknews.com/news/moving-away-from-gps-to-a-multi-sensor-inertial-centered-architecture
+      \endverb
+      \verb{url}
+      \verb https://www.geoweeknews.com/news/moving-away-from-gps-to-a-multi-sensor-inertial-centered-architecture
+      \endverb
+    \endentry
+    \entry{ref9}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=7748ff2eab388d191849e7844c34c076}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={J.-C.},
+           giveni={J\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{03ce4bb4a4a3a3a168cd721ba97907b5}
+      \strng{fullhash}{03ce4bb4a4a3a3a168cd721ba97907b5}
+      \strng{fullhashraw}{03ce4bb4a4a3a3a168cd721ba97907b5}
+      \strng{bibnamehash}{03ce4bb4a4a3a3a168cd721ba97907b5}
+      \strng{authorbibnamehash}{03ce4bb4a4a3a3a168cd721ba97907b5}
+      \strng{authornamehash}{03ce4bb4a4a3a3a168cd721ba97907b5}
+      \strng{authorfullhash}{03ce4bb4a4a3a3a168cd721ba97907b5}
+      \strng{authorfullhashraw}{03ce4bb4a4a3a3a168cd721ba97907b5}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{number}{24}
+      \field{title}{Landmark-Based Scale Estimation and Correction of Visual Inertial Odometry for VTOL UAVs in a GPS-Denied Environment}
+      \field{volume}{22}
+      \field{year}{2022}
+      \field{pages}{9654}
+      \range{pages}{1}
+    \endentry
+    \entry{imgref2}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=dcc11eaf25c386230ab5fe854eccb89d}{%
+           family={{Palantir Technologies}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{dcc11eaf25c386230ab5fe854eccb89d}
+      \strng{fullhash}{dcc11eaf25c386230ab5fe854eccb89d}
+      \strng{fullhashraw}{dcc11eaf25c386230ab5fe854eccb89d}
+      \strng{bibnamehash}{dcc11eaf25c386230ab5fe854eccb89d}
+      \strng{authorbibnamehash}{dcc11eaf25c386230ab5fe854eccb89d}
+      \strng{authornamehash}{dcc11eaf25c386230ab5fe854eccb89d}
+      \strng{authorfullhash}{dcc11eaf25c386230ab5fe854eccb89d}
+      \strng{authorfullhashraw}{dcc11eaf25c386230ab5fe854eccb89d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-08-20}
+      \field{title}{The Future of Drone Navigation}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://blog.palantir.com/the-future-of-drone-navigation-7236075fdedf
+      \endverb
+      \verb{url}
+      \verb https://blog.palantir.com/the-future-of-drone-navigation-7236075fdedf
+      \endverb
+    \endentry
+    \entry{ref10}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=369d6bcdceee817a8d812364032e7b23}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=be419a7eb13a7ce0ec3fcc411324df48}{%
+           family={Wan},
+           familyi={W\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=240f15f7d0b589c89d5552453f46785d}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{e5cb40335674479fefc41c0465463d79}
+      \strng{fullhash}{2f2fa0fd53c04d01e2151eae4c04a8ab}
+      \strng{fullhashraw}{2f2fa0fd53c04d01e2151eae4c04a8ab}
+      \strng{bibnamehash}{2f2fa0fd53c04d01e2151eae4c04a8ab}
+      \strng{authorbibnamehash}{2f2fa0fd53c04d01e2151eae4c04a8ab}
+      \strng{authornamehash}{e5cb40335674479fefc41c0465463d79}
+      \strng{authorfullhash}{2f2fa0fd53c04d01e2151eae4c04a8ab}
+      \strng{authorfullhashraw}{2f2fa0fd53c04d01e2151eae4c04a8ab}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{number}{8}
+      \field{title}{Optimization-Based Online Initialization and Calibration of Monocular Visual-Inertial Odometry Considering Spatial-Temporal Constraints}
+      \field{volume}{21}
+      \field{year}{2021}
+      \field{pages}{2673}
+      \range{pages}{1}
+    \endentry
+    \entry{ref11}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=ce084360cc68e7db4fe6cae1287b3adf}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=46d061ac74384b7817a4ea81975c6bbc}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=32e563370422457790db030ab2c13183}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=955e4fa0c47a616eecedbeeb06aa65fa}{%
+           family={Dong},
+           familyi={D\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{0954792dbe24f33db81eda5a866f3dba}
+      \strng{fullhash}{ed1acdb6125fbe8b30974f2833fd2c00}
+      \strng{fullhashraw}{ed1acdb6125fbe8b30974f2833fd2c00}
+      \strng{bibnamehash}{ed1acdb6125fbe8b30974f2833fd2c00}
+      \strng{authorbibnamehash}{ed1acdb6125fbe8b30974f2833fd2c00}
+      \strng{authornamehash}{0954792dbe24f33db81eda5a866f3dba}
+      \strng{authorfullhash}{ed1acdb6125fbe8b30974f2833fd2c00}
+      \strng{authorfullhashraw}{ed1acdb6125fbe8b30974f2833fd2c00}
+      \field{extraname}{1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific Reports}
+      \field{title}{Post-integration based point-line feature visual SLAM in low-texture environments}
+      \field{volume}{15}
+      \field{year}{2025}
+      \field{pages}{14606}
+      \range{pages}{1}
+    \endentry
+    \entry{ref12}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=92260edf3b6211aefedc2e8e883915fb}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=233e9b03d7719a059321d84c28344c32}{%
+           family={Zuo},
+           familyi={Z\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=63e0e1860e11471c2c80f58e0ac0b459}{%
+           family={Larsson},
+           familyi={L\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=31cf9b30f3f260db3936c7ba300a2f04}{%
+           family={Pollefeys},
+           familyi={P\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{3fe727ea7fc56ecf40dfb12a5bc7288e}
+      \strng{fullhash}{75ca8f211d43baa6928d2025843c7f7d}
+      \strng{fullhashraw}{75ca8f211d43baa6928d2025843c7f7d}
+      \strng{bibnamehash}{75ca8f211d43baa6928d2025843c7f7d}
+      \strng{authorbibnamehash}{75ca8f211d43baa6928d2025843c7f7d}
+      \strng{authornamehash}{3fe727ea7fc56ecf40dfb12a5bc7288e}
+      \strng{authorfullhash}{75ca8f211d43baa6928d2025843c7f7d}
+      \strng{authorfullhashraw}{75ca8f211d43baa6928d2025843c7f7d}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. IEEE/CVF Int. Conf. Comput. Vis. (ICCV)}
+      \field{month}{10}
+      \field{title}{MBA-VO: Motion Blur Aware Visual Odometry}
+      \field{year}{2021}
+      \field{pages}{5550\bibrangedash 5559}
+      \range{pages}{10}
+    \endentry
+    \entry{ref13}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=4531bc045c08b9165192fd733acf2bd5}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{eff5c0acbfcff31f941869f34a8fcc5d}
+      \strng{fullhash}{eff5c0acbfcff31f941869f34a8fcc5d}
+      \strng{fullhashraw}{eff5c0acbfcff31f941869f34a8fcc5d}
+      \strng{bibnamehash}{eff5c0acbfcff31f941869f34a8fcc5d}
+      \strng{authorbibnamehash}{eff5c0acbfcff31f941869f34a8fcc5d}
+      \strng{authornamehash}{eff5c0acbfcff31f941869f34a8fcc5d}
+      \strng{authorfullhash}{eff5c0acbfcff31f941869f34a8fcc5d}
+      \strng{authorfullhashraw}{eff5c0acbfcff31f941869f34a8fcc5d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Drones}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{number}{1}
+      \field{title}{A Simultaneous Control, Localization, and Mapping System for UAVs}
+      \field{volume}{9}
+      \field{year}{2025}
+      \field{pages}{69}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/drones9010069
+      \endverb
+    \endentry
+    \entry{ref14}{misc}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{Vision-based localization methods under GPS-denied conditions}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://arxiv.org/pdf/2211.11988
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/pdf/2211.11988
+      \endverb
+    \endentry
+    \entry{ref15}{misc}{}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{Viavi Launches VINS to Tackle Rising GPS Jamming for UAV Navigation}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.nasdaq.com/articles/viavi-launches-vins-tackle-rising-gps-jamming-uav-navigation
+      \endverb
+      \verb{url}
+      \verb https://www.nasdaq.com/articles/viavi-launches-vins-tackle-rising-gps-jamming-uav-navigation
+      \endverb
+    \endentry
+    \entry{ref16}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=c2853b8567e7265104ae7cd7a8b29ce2}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a494467233dc99d0be6a30678b7aca5a}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bf122582be3f4de7bd8ea30e291dba88}{%
+           family={Shen},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{8abac651237277a973557dc3a45e7ab5}
+      \strng{fullhash}{83070a4fa2731fcbe4c340b4457548c8}
+      \strng{fullhashraw}{83070a4fa2731fcbe4c340b4457548c8}
+      \strng{bibnamehash}{83070a4fa2731fcbe4c340b4457548c8}
+      \strng{authorbibnamehash}{83070a4fa2731fcbe4c340b4457548c8}
+      \strng{authornamehash}{8abac651237277a973557dc3a45e7ab5}
+      \strng{authorfullhash}{83070a4fa2731fcbe4c340b4457548c8}
+      \strng{authorfullhashraw}{83070a4fa2731fcbe4c340b4457548c8}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1708.03852
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1708.03852
+      \endverb
+    \endentry
+    \entry{ref17}{misc}{}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{Visual-inertial navigation system}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.uavnavigation.com/company/blog/visual-inertial-navigation-system
+      \endverb
+      \verb{url}
+      \verb https://www.uavnavigation.com/company/blog/visual-inertial-navigation-system
+      \endverb
+    \endentry
+    \entry{ref18}{misc}{}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{A Comprehensive Introduction of Visual-Inertial Navigation}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://arxiv.org/pdf/2307.11758
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/pdf/2307.11758
+      \endverb
+    \endentry
+    \entry{ref19}{misc}{}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{Inertial Measurement Unit (IMU) | An Introduction}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.advancednavigation.com/tech-articles/inertial-measurement-unit-imu-an-introduction/
+      \endverb
+      \verb{url}
+      \verb https://www.advancednavigation.com/tech-articles/inertial-measurement-unit-imu-an-introduction/
+      \endverb
+    \endentry
+    \entry{ref20}{misc}{}{}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{Improving Monocular Visual-Inertial Initialization with Structureless Visual-Inertial Bundle Adjustment}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://arxiv.org/html/2502.16598v1
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/html/2502.16598v1
+      \endverb
+    \endentry
+    \entry{ref21}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=c84333257e5fef7e25ef4f7a4111077c}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{e66cb4446ecc2270b04a4b878e22bbf0}
+      \strng{fullhash}{e66cb4446ecc2270b04a4b878e22bbf0}
+      \strng{fullhashraw}{e66cb4446ecc2270b04a4b878e22bbf0}
+      \strng{bibnamehash}{e66cb4446ecc2270b04a4b878e22bbf0}
+      \strng{authorbibnamehash}{e66cb4446ecc2270b04a4b878e22bbf0}
+      \strng{authornamehash}{e66cb4446ecc2270b04a4b878e22bbf0}
+      \strng{authorfullhash}{e66cb4446ecc2270b04a4b878e22bbf0}
+      \strng{authorfullhashraw}{e66cb4446ecc2270b04a4b878e22bbf0}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sensors}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{number}{12}
+      \field{title}{MEMS IMU Error Mitigation Using Rotation Modulation Technique}
+      \field{volume}{16}
+      \field{year}{2016}
+      \field{pages}{2017}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s16122017
+      \endverb
+    \endentry
+    \entry{ref22}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=1e253c452e5a59374d4f85b65c8e67cf}{%
+           family={Rehbinder},
+           familyi={R\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{fd4fce1f7b9ddebc5fe630b5377cb420}
+      \strng{fullhash}{fd4fce1f7b9ddebc5fe630b5377cb420}
+      \strng{fullhashraw}{fd4fce1f7b9ddebc5fe630b5377cb420}
+      \strng{bibnamehash}{fd4fce1f7b9ddebc5fe630b5377cb420}
+      \strng{authorbibnamehash}{fd4fce1f7b9ddebc5fe630b5377cb420}
+      \strng{authornamehash}{fd4fce1f7b9ddebc5fe630b5377cb420}
+      \strng{authorfullhash}{fd4fce1f7b9ddebc5fe630b5377cb420}
+      \strng{authorfullhashraw}{fd4fce1f7b9ddebc5fe630b5377cb420}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Micromachines}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{number}{4}
+      \field{title}{An Evaluation of MEMS-IMU Performance on the Absolute Trajectory Error of Visual-Inertial Navigation System}
+      \field{volume}{13}
+      \field{year}{2022}
+      \field{pages}{602}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/mi13040602
+      \endverb
+    \endentry
+    \entry{ref23}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b8a48184e3794e3037528773cc004bb8}{%
+           family={Jain},
+           familyi={J\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{b8a48184e3794e3037528773cc004bb8}
+      \strng{fullhash}{b8a48184e3794e3037528773cc004bb8}
+      \strng{fullhashraw}{b8a48184e3794e3037528773cc004bb8}
+      \strng{bibnamehash}{b8a48184e3794e3037528773cc004bb8}
+      \strng{authorbibnamehash}{b8a48184e3794e3037528773cc004bb8}
+      \strng{authornamehash}{b8a48184e3794e3037528773cc004bb8}
+      \strng{authorfullhash}{b8a48184e3794e3037528773cc004bb8}
+      \strng{authorfullhashraw}{b8a48184e3794e3037528773cc004bb8}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{Monocular vs Stereo vs Monochrome Camera}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://medium.com/@abhishekjainindore24/monocular-vs-stereo-vs-monochrome-camera-16612bf4358b
+      \endverb
+      \verb{url}
+      \verb https://medium.com/@abhishekjainindore24/monocular-vs-stereo-vs-monochrome-camera-16612bf4358b
+      \endverb
+    \endentry
+    \entry{ref24}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=c2853b8567e7265104ae7cd7a8b29ce2}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a494467233dc99d0be6a30678b7aca5a}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bf122582be3f4de7bd8ea30e291dba88}{%
+           family={Shen},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{8abac651237277a973557dc3a45e7ab5}
+      \strng{fullhash}{83070a4fa2731fcbe4c340b4457548c8}
+      \strng{fullhashraw}{83070a4fa2731fcbe4c340b4457548c8}
+      \strng{bibnamehash}{83070a4fa2731fcbe4c340b4457548c8}
+      \strng{authorbibnamehash}{83070a4fa2731fcbe4c340b4457548c8}
+      \strng{authornamehash}{8abac651237277a973557dc3a45e7ab5}
+      \strng{authorfullhash}{83070a4fa2731fcbe4c340b4457548c8}
+      \strng{authorfullhashraw}{83070a4fa2731fcbe4c340b4457548c8}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://ar5iv.labs.arxiv.org/html/1708.03852
+      \endverb
+      \verb{url}
+      \verb https://ar5iv.labs.arxiv.org/html/1708.03852
+      \endverb
+    \endentry
+    \entry{ref25}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9843b981a347092faf6faad9f1b9bcdd}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{9843b981a347092faf6faad9f1b9bcdd}
+      \strng{fullhash}{9843b981a347092faf6faad9f1b9bcdd}
+      \strng{fullhashraw}{9843b981a347092faf6faad9f1b9bcdd}
+      \strng{bibnamehash}{9843b981a347092faf6faad9f1b9bcdd}
+      \strng{authorbibnamehash}{9843b981a347092faf6faad9f1b9bcdd}
+      \strng{authornamehash}{9843b981a347092faf6faad9f1b9bcdd}
+      \strng{authorfullhash}{9843b981a347092faf6faad9f1b9bcdd}
+      \strng{authorfullhashraw}{9843b981a347092faf6faad9f1b9bcdd}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{Visual Odometry Full Tutorial}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://avisingh599.github.io/vision/visual-odometry-full/
+      \endverb
+      \verb{url}
+      \verb https://avisingh599.github.io/vision/visual-odometry-full/
+      \endverb
+    \endentry
+    \entry{ref26}{misc}{}{}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{Loosely Coupled \& Tightly Coupled INS \& GNSS [2024 Guide]}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://pointonenav.com/news/loose-vs-tight-coupling-gnss/
+      \endverb
+      \verb{url}
+      \verb https://pointonenav.com/news/loose-vs-tight-coupling-gnss/
+      \endverb
+    \endentry
+    \entry{ref27}{misc}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=9877207b0d7a7b6f0a40f8a227113ff0}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{d7c21f7deb50f4e4666bed662104396f}
+      \strng{fullhash}{d7c21f7deb50f4e4666bed662104396f}
+      \strng{fullhashraw}{d7c21f7deb50f4e4666bed662104396f}
+      \strng{bibnamehash}{d7c21f7deb50f4e4666bed662104396f}
+      \strng{authorbibnamehash}{d7c21f7deb50f4e4666bed662104396f}
+      \strng{authornamehash}{d7c21f7deb50f4e4666bed662104396f}
+      \strng{authorfullhash}{d7c21f7deb50f4e4666bed662104396f}
+      \strng{authorfullhashraw}{d7c21f7deb50f4e4666bed662104396f}
+      \field{extraname}{2}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{Tightly-coupled Fusion of Global Positional Measurements in Optimization-based Visual-Inertial Odometry}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://udel.edu/~ghuang/icra21-vins-workshop/papers/06-Cioffi_global-VIO.pdf
+      \endverb
+      \verb{url}
+      \verb https://udel.edu/~ghuang/icra21-vins-workshop/papers/06-Cioffi_global-VIO.pdf
+      \endverb
+    \endentry
+    \entry{ref28}{misc}{}{}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{Keyframe-Based Visual-Inertial Odometry Using Nonlinear Optimization}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/265683241_Keyframe-Based_Visual-Inertial_Odometry_Using_Nonlinear_Optimization
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/265683241_Keyframe-Based_Visual-Inertial_Odometry_Using_Nonlinear_Optimization
+      \endverb
+    \endentry
+    \entry{ref29}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=df9a91cca8764730a9c1bd551f277702}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{0cc8f63c9cdaa0b943ba331c2a2ac2f4}
+      \strng{fullhash}{0cc8f63c9cdaa0b943ba331c2a2ac2f4}
+      \strng{fullhashraw}{0cc8f63c9cdaa0b943ba331c2a2ac2f4}
+      \strng{bibnamehash}{0cc8f63c9cdaa0b943ba331c2a2ac2f4}
+      \strng{authorbibnamehash}{0cc8f63c9cdaa0b943ba331c2a2ac2f4}
+      \strng{authornamehash}{0cc8f63c9cdaa0b943ba331c2a2ac2f4}
+      \strng{authorfullhash}{0cc8f63c9cdaa0b943ba331c2a2ac2f4}
+      \strng{authorfullhashraw}{0cc8f63c9cdaa0b943ba331c2a2ac2f4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Robotics}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{number}{3}
+      \field{title}{A Review of Visual-Inertial Simultaneous Localization and Mapping}
+      \field{volume}{7}
+      \field{year}{2018}
+      \field{pages}{45}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/robotics7030045
+      \endverb
+    \endentry
+    \entry{ref30}{misc}{}{}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{Extended Kalman Filter Navigation Overview and Tuning}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://ardupilot.org/dev/docs/extended-kalman-filter.html
+      \endverb
+      \verb{url}
+      \verb https://ardupilot.org/dev/docs/extended-kalman-filter.html
+      \endverb
+    \endentry
+    \entry{ref31}{misc}{}{}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{SP-VIO: Robust and Efficient Filter-Based Visual Inertial Odometry with State Transformation Model and Pose-Only Visual Description}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://arxiv.org/html/2411.07551v1
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/html/2411.07551v1
+      \endverb
+    \endentry
+    \entry{ref32}{misc}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=d90650ec8434180101eb4aeec8e4a0c6}{%
+           family={Triggs},
+           familyi={T\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{3dbf10f3eae78b56e0a5c4222cacc715}
+      \strng{fullhash}{3dbf10f3eae78b56e0a5c4222cacc715}
+      \strng{fullhashraw}{3dbf10f3eae78b56e0a5c4222cacc715}
+      \strng{bibnamehash}{3dbf10f3eae78b56e0a5c4222cacc715}
+      \strng{authorbibnamehash}{3dbf10f3eae78b56e0a5c4222cacc715}
+      \strng{authornamehash}{3dbf10f3eae78b56e0a5c4222cacc715}
+      \strng{authorfullhash}{3dbf10f3eae78b56e0a5c4222cacc715}
+      \strng{authorfullhashraw}{3dbf10f3eae78b56e0a5c4222cacc715}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: Aug. 14, 2025}
+      \field{title}{Bundle Adjustment — A Modern Synthesis}
+      \field{year}{2000}
+      \verb{urlraw}
+      \verb https://www.cs.jhu.edu/~misha/ReadingSeminar/Papers/Triggs00.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.cs.jhu.edu/~misha/ReadingSeminar/Papers/Triggs00.pdf
+      \endverb
+    \endentry
+    \entry{refnew2}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=3280738b235db4a5d06496396d3f939e}{%
+           family={Mourikis},
+           familyi={M\bibinitperiod},
+           given={Anastasios\bibnamedelima I.},
+           giveni={A\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=77e00f5693ce8144b43e2d4507bf457b}{%
+           family={Roumeliotis},
+           familyi={R\bibinitperiod},
+           given={Stergios\bibnamedelima I.},
+           giveni={S\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{ffde757da3863460c4d0fa4babfba0cd}
+      \strng{fullhash}{ffde757da3863460c4d0fa4babfba0cd}
+      \strng{fullhashraw}{ffde757da3863460c4d0fa4babfba0cd}
+      \strng{bibnamehash}{ffde757da3863460c4d0fa4babfba0cd}
+      \strng{authorbibnamehash}{ffde757da3863460c4d0fa4babfba0cd}
+      \strng{authornamehash}{ffde757da3863460c4d0fa4babfba0cd}
+      \strng{authorfullhash}{ffde757da3863460c4d0fa4babfba0cd}
+      \strng{authorfullhashraw}{ffde757da3863460c4d0fa4babfba0cd}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)}
+      \field{title}{A Multi-State Constraint Kalman Filter for Vision-aided Inertial Navigation}
+      \field{year}{2007}
+      \field{pages}{3565\bibrangedash 3572}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb https://www.sp.cs.cmu.edu/people/adimitri/docs/Mourikis_ICRA_2007.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.sp.cs.cmu.edu/people/adimitri/docs/Mourikis_ICRA_2007.pdf
+      \endverb
+    \endentry
+    \entry{refnew3}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=acfde70bd66098da297a4f7fb11940d8}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Gim\bibnamedelima Hee},
+           giveni={G\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=501629493a5ead2d23ee597103478ce8}{%
+           family={Pollefeys},
+           familyi={P\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+        {{hash=33730c18814fba32a7c44fb3ec828379}{%
+           family={Fraundorfer},
+           familyi={F\bibinitperiod},
+           given={Marc},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5ac47aa38436064c4d6263a3362dc1e}
+      \strng{fullhash}{34deb25786a30e2809b0f7c9808a72b0}
+      \strng{fullhashraw}{34deb25786a30e2809b0f7c9808a72b0}
+      \strng{bibnamehash}{34deb25786a30e2809b0f7c9808a72b0}
+      \strng{authorbibnamehash}{34deb25786a30e2809b0f7c9808a72b0}
+      \strng{authornamehash}{f5ac47aa38436064c4d6263a3362dc1e}
+      \strng{authorfullhash}{34deb25786a30e2809b0f7c9808a72b0}
+      \strng{authorfullhashraw}{34deb25786a30e2809b0f7c9808a72b0}
+      \field{extraname}{2}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{title}{Motion Estimation for Self-driving Cars with a Generalized Camera}
+      \field{year}{2013}
+      \field{pages}{2746\bibrangedash 2753}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb https://www.cv-foundation.org/openaccess/content_cvpr_2013/papers/Lee_Motion_Estimation_for_2013_CVPR_paper.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.cv-foundation.org/openaccess/content_cvpr_2013/papers/Lee_Motion_Estimation_for_2013_CVPR_paper.pdf
+      \endverb
+    \endentry
+    \entry{refnew4}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=eaaac03fb74edcb88e739520e500495e}{%
+           family={Strasdat},
+           familyi={S\bibinitperiod},
+           given={Hauke},
+           giveni={H\bibinitperiod}}}%
+        {{hash=3d7bfecf7bb6ec2d8121cec8fb7beda2}{%
+           family={Montiel},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi M.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=6800da0b1eba1591ea0c413f8efceae3}{%
+           family={Davison},
+           familyi={D\bibinitperiod},
+           given={Andrew\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{2ab52027647f0b859f6a866e48c15253}
+      \strng{fullhash}{40acf9772c9bd627bac86b4e58ea6d36}
+      \strng{fullhashraw}{40acf9772c9bd627bac86b4e58ea6d36}
+      \strng{bibnamehash}{40acf9772c9bd627bac86b4e58ea6d36}
+      \strng{authorbibnamehash}{40acf9772c9bd627bac86b4e58ea6d36}
+      \strng{authornamehash}{2ab52027647f0b859f6a866e48c15253}
+      \strng{authorfullhash}{40acf9772c9bd627bac86b4e58ea6d36}
+      \strng{authorfullhashraw}{40acf9772c9bd627bac86b4e58ea6d36}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Image and Vision Computing}
+      \field{number}{2}
+      \field{title}{Visual SLAM: Why filter?}
+      \field{volume}{30}
+      \field{year}{2012}
+      \field{pages}{65\bibrangedash 77}
+      \range{pages}{13}
+      \verb{urlraw}
+      \verb https://www.doc.ic.ac.uk/~ajd/Publications/strasdat_ivc_2011.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.doc.ic.ac.uk/~ajd/Publications/strasdat_ivc_2011.pdf
+      \endverb
+    \endentry
+    \entry{refnew5}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=a6b6e778fcd0ba37d9fef8a433471203}{%
+           family={Forster},
+           familyi={F\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=09ed5bfe663f495a0cb6828e722b7919}{%
+           family={Carlone},
+           familyi={C\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod}}}%
+        {{hash=44074d3cb57c174a8b15ccc9a576ac0d}{%
+           family={Dellaert},
+           familyi={D\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=dac21ab4ede215439fcc6b051be53a11}{%
+           family={Scaramuzza},
+           familyi={S\bibinitperiod},
+           given={Davide},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{c160fa34da31c9b364cb29944b477266}
+      \strng{fullhash}{df880edafe55d50cae3cadb735b5bd7e}
+      \strng{fullhashraw}{df880edafe55d50cae3cadb735b5bd7e}
+      \strng{bibnamehash}{df880edafe55d50cae3cadb735b5bd7e}
+      \strng{authorbibnamehash}{df880edafe55d50cae3cadb735b5bd7e}
+      \strng{authornamehash}{c160fa34da31c9b364cb29944b477266}
+      \strng{authorfullhash}{df880edafe55d50cae3cadb735b5bd7e}
+      \strng{authorfullhashraw}{df880edafe55d50cae3cadb735b5bd7e}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Robotics}
+      \field{number}{1}
+      \field{title}{On-Manifold Preintegration for Real-Time Visual-Inertial Odometry}
+      \field{volume}{33}
+      \field{year}{2017}
+      \field{pages}{1\bibrangedash 21}
+      \range{pages}{21}
+      \verb{urlraw}
+      \verb https://rpg.ifi.uzh.ch/docs/TRO17_Forster.pdf
+      \endverb
+      \verb{url}
+      \verb https://rpg.ifi.uzh.ch/docs/TRO17_Forster.pdf
+      \endverb
+    \endentry
+    \entry{refnew9}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=e574e001a15b2ede3e22f98ab812e9e9}{%
+           family={Teed},
+           familyi={T\bibinitperiod},
+           given={Zachary},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=0ae7fdc13773f928525f673b05f37149}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Jia},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{fullhash}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{fullhashraw}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{bibnamehash}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{authorbibnamehash}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{authornamehash}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{authorfullhash}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{authorfullhashraw}{8e2bcf792117b71a09f9397fed64c13a}
+      \field{extraname}{1}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Neural Information Processing Systems (NeurIPS)}
+      \field{title}{DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://arxiv.org/pdf/2108.10869.pdf
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/pdf/2108.10869.pdf
+      \endverb
+    \endentry
+    \entry{refnew10}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=e574e001a15b2ede3e22f98ab812e9e9}{%
+           family={Teed},
+           familyi={T\bibinitperiod},
+           given={Zachary},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=0ae7fdc13773f928525f673b05f37149}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Jia},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{fullhash}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{fullhashraw}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{bibnamehash}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{authorbibnamehash}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{authornamehash}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{authorfullhash}{8e2bcf792117b71a09f9397fed64c13a}
+      \strng{authorfullhashraw}{8e2bcf792117b71a09f9397fed64c13a}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{European Conference on Computer Vision (ECCV)}
+      \field{title}{Deep Patch Visual Odometry}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://arxiv.org/pdf/2208.04726.pdf
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/pdf/2208.04726.pdf
+      \endverb
+    \endentry
+    \entry{refnew11}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=6bd6d882474f9fd5bae1c90977209c29}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Shuaixin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3fca85c58d6b25b820979f8e31e8f2d5}{%
+           family={Miura},
+           familyi={M\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{e792d0210edb9dfcdc0c141a64c7a1b4}
+      \strng{fullhash}{e792d0210edb9dfcdc0c141a64c7a1b4}
+      \strng{fullhashraw}{e792d0210edb9dfcdc0c141a64c7a1b4}
+      \strng{bibnamehash}{e792d0210edb9dfcdc0c141a64c7a1b4}
+      \strng{authorbibnamehash}{e792d0210edb9dfcdc0c141a64c7a1b4}
+      \strng{authornamehash}{e792d0210edb9dfcdc0c141a64c7a1b4}
+      \strng{authorfullhash}{e792d0210edb9dfcdc0c141a64c7a1b4}
+      \strng{authorfullhashraw}{e792d0210edb9dfcdc0c141a64c7a1b4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE/SICE International Symposium on System Integration (SII)}
+      \field{title}{LRD-SLAM: Lightweight and Robust Dynamic SLAM with Low Latency}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://arxiv.org/pdf/2307.10449.pdf
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/pdf/2307.10449.pdf
+      \endverb
+    \endentry
+    \entry{refnew12}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=2f356fb49f8330b7171686cfe9ebb0f7}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Yue},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=302d1c3dcb3386b97fe055026b715177}{%
+           family={Croon},
+           familyi={C\bibinitperiod},
+           given={Guido\bibnamedelimb C.\bibnamedelimi H.\bibnamedelimi E.},
+           giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim E\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \strng{namehash}{34e1720a64c790e3198c972a91589257}
+      \strng{fullhash}{34e1720a64c790e3198c972a91589257}
+      \strng{fullhashraw}{34e1720a64c790e3198c972a91589257}
+      \strng{bibnamehash}{34e1720a64c790e3198c972a91589257}
+      \strng{authorbibnamehash}{34e1720a64c790e3198c972a91589257}
+      \strng{authornamehash}{34e1720a64c790e3198c972a91589257}
+      \strng{authorfullhash}{34e1720a64c790e3198c972a91589257}
+      \strng{authorfullhashraw}{34e1720a64c790e3198c972a91589257}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Robotics and Autonomous Systems}
+      \field{title}{CUAHN-VIO: Content-and-Uncertainty-Aware Homography Network for Visual-Inertial Odometry}
+      \field{volume}{157}
+      \field{year}{2022}
+      \field{pages}{104245}
+      \range{pages}{1}
+      \verb{urlraw}
+      \verb https://arxiv.org/pdf/2208.13935.pdf
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/pdf/2208.13935.pdf
+      \endverb
+    \endentry
+    \entry{refnew13}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=d955f122a24b1032f0014fca2c537717}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Kai\bibnamedelimb R.\bibnamedelimi B.\bibnamedelimi Y.},
+           giveni={K\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=f27ec46ccd272a021fd78bdac92dd490}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{24bf4330e602a95c187f1b4a091b3046}
+      \strng{fullhash}{24bf4330e602a95c187f1b4a091b3046}
+      \strng{fullhashraw}{24bf4330e602a95c187f1b4a091b3046}
+      \strng{bibnamehash}{24bf4330e602a95c187f1b4a091b3046}
+      \strng{authorbibnamehash}{24bf4330e602a95c187f1b4a091b3046}
+      \strng{authornamehash}{24bf4330e602a95c187f1b4a091b3046}
+      \strng{authorfullhash}{24bf4330e602a95c187f1b4a091b3046}
+      \strng{authorfullhashraw}{24bf4330e602a95c187f1b4a091b3046}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.RO}
+      \field{eprinttype}{arXiv}
+      \field{title}{A Survey on Deep Learning for Visual SLAM}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2105.09521
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/pdf/2105.09521.pdf
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/pdf/2105.09521.pdf
+      \endverb
+    \endentry
+    \entry{refnew14}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=a2fe9051fe051f819bd739ef3e340377}{%
+           family={{NVIDIA}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{fullhash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{fullhashraw}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{bibnamehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{authorbibnamehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{authornamehash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{authorfullhash}{a2fe9051fe051f819bd739ef3e340377}
+      \strng{authorfullhashraw}{a2fe9051fe051f819bd739ef3e340377}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Press release}
+      \field{title}{NVIDIA Jetson AGX Orin Delivers up to 275 TOPS for AI and Autonomous Machines}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://nvidianews.nvidia.com/news/nvidia-jetson-agx-orin-delivers-up-to-275-trillion-operations-per-second-for-ai-at-the-edge
+      \endverb
+      \verb{url}
+      \verb https://nvidianews.nvidia.com/news/nvidia-jetson-agx-orin-delivers-up-to-275-trillion-operations-per-second-for-ai-at-the-edge
+      \endverb
+    \endentry
+    \entry{refnew15}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=d5ea091300359aaf05f459a20b20790c}{%
+           family={Grinvald},
+           familyi={G\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=5c07f3efaee013ed7b5ab702bb2d2260}{%
+           family={Furrer},
+           familyi={F\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c7d4401200a0b1b6498db51b84d1e7fd}{%
+           family={Novkovic},
+           familyi={N\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=07818300893272680700e26b484b2f50}{%
+           family={Siegwart},
+           familyi={S\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=5686393193af94d88ce95c2c55fed530}{%
+           family={Nieto},
+           familyi={N\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{dace03bf193b631514c5b01c12400f1d}
+      \strng{fullhash}{a4e79886c8e7454ba5b75a2fad9cce5c}
+      \strng{fullhashraw}{a4e79886c8e7454ba5b75a2fad9cce5c}
+      \strng{bibnamehash}{a4e79886c8e7454ba5b75a2fad9cce5c}
+      \strng{authorbibnamehash}{a4e79886c8e7454ba5b75a2fad9cce5c}
+      \strng{authornamehash}{dace03bf193b631514c5b01c12400f1d}
+      \strng{authorfullhash}{a4e79886c8e7454ba5b75a2fad9cce5c}
+      \strng{authorfullhashraw}{a4e79886c8e7454ba5b75a2fad9cce5c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Robotics and Automation Letters}
+      \field{number}{4}
+      \field{title}{Volumetric Instance-Aware Semantic Mapping and 3D Object Discovery}
+      \field{volume}{4}
+      \field{year}{2019}
+      \field{pages}{3882\bibrangedash 3889}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb https://arxiv.org/pdf/1907.05435.pdf
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/pdf/1907.05435.pdf
+      \endverb
+    \endentry
+    \entry{refnew16}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=bd5f28106f9c802314f709cbf76b35f3}{%
+           family={Cui},
+           familyi={C\bibinitperiod},
+           given={Yiming},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=3cacb43fb0ecd756941db1792ecffc49}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Shaojie},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{b03c83f7397b7bff65ab36cb5ce9720d}
+      \strng{fullhash}{b03c83f7397b7bff65ab36cb5ce9720d}
+      \strng{fullhashraw}{b03c83f7397b7bff65ab36cb5ce9720d}
+      \strng{bibnamehash}{b03c83f7397b7bff65ab36cb5ce9720d}
+      \strng{authorbibnamehash}{b03c83f7397b7bff65ab36cb5ce9720d}
+      \strng{authornamehash}{b03c83f7397b7bff65ab36cb5ce9720d}
+      \strng{authorfullhash}{b03c83f7397b7bff65ab36cb5ce9720d}
+      \strng{authorfullhashraw}{b03c83f7397b7bff65ab36cb5ce9720d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}
+      \field{title}{DS-SLAM: A Semantic Visual SLAM towards Dynamic Environments}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://arxiv.org/pdf/1809.08690.pdf
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/pdf/1809.08690.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

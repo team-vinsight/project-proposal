@@ -1,0 +1,276 @@
+\section{Literature Review}
+\subsection{The Challenge of Autonomous Navigation in GPS-Restricted Environments}
+\subsubsection{The Imperative for GPS-Independent Navigation}
+The proliferation of Unmanned Aerial Vehicles (UAVs) has catalyzed transformative advancements across a multitude of sectors, including surveillance, reconnaissance, infrastructure inspection, and search-and-rescue operations.\cite{ref13} The operational envelope of these autonomous systems is increasingly expanding into complex and unstructured environments where the reliance on traditional navigation aids, primarily the Global Navigation Satellite System (GNSS), is untenable. Environments such as dense urban canyons, subterranean spaces, cluttered indoor settings, and thick forests are characterized as GPS-restricted or GPS-denied.\cite{ref14} Within these domains, GNSS signals are frequently attenuated, blocked, or corrupted by multipath effects, where signals reflect off surfaces before reaching the receiver, leading to significant positional errors.\cite{ref14}
+This inherent unreliability is further compounded by the growing threat of deliberate signal interference. Malicious actors can employ jamming techniques to overwhelm GNSS receivers with noise, or more insidiously, spoofing techniques to broadcast false signals, deceiving the UAV about its true location.\cite{ref14} The strategic and commercial implications of this vulnerability are significant; recent reports indicate a sharp rise in GPS jamming and spoofing incidents, with as many as 700 events occurring globally each day, particularly in conflict zones and across North America and Europe.\cite{ref15} The operational integrity of a UAV hinges on its ability to perform high-accuracy, continuous state estimation—the process of determining its position, velocity, and orientation (attitude) in real-time. The potential for GNSS failure, whether environmental or adversarial, renders it an insufficient standalone solution for robust autonomous flight, creating a critical demand for alternative navigation technologies.\cite{ref16}
+\subsubsection{Visual-Inertial Navigation Systems (VINS) as a Premier Solution}
+Among the suite of alternative navigation technologies, Visual-Inertial Navigation Systems (VINS) have emerged as a premier solution, offering a compelling balance of performance, cost, and physical footprint. VINS achieves robust state estimation by fusing data from two complementary, low-cost, and lightweight sensors: a visual camera and an Inertial Measurement Unit (IMU).\cite{ref17} These sensors are ubiquitous on modern robotic platforms and possess symbiotic characteristics.
+The camera, a passive sensor, captures rich information about the surrounding environment, including visual features such as color and texture.\cite{ref14} Using computer vision algorithms, a VINS can identify and track these features across consecutive images to infer its own motion and, in many cases, build a map of its surroundings—a process known as Visual SLAM (VSLAM).1 However, vision-only systems are susceptible to failure in visually degraded conditions, such as low light, textureless environments (e.g., white walls), or during rapid motion that induces significant image blur.\cite{ref18}
+The IMU, an active sensor, provides high-frequency measurements of the UAV's linear acceleration and angular velocity.\cite{ref17} These measurements are self-contained and immune to external environmental conditions, allowing the system to continue estimating its motion even when visual information is unavailable.\cite{ref18} The fundamental limitation of an IMU, particularly the low-cost Micro-Electro-Mechanical Systems (MEMS) type used in UAVs, is that its measurements are corrupted by noise and biases. When these measurements are integrated over time to compute velocity and position, the errors accumulate rapidly, leading to unbounded drift.\cite{ref19} 
+VINS masterfully exploits the complementary nature of these two sensors.\cite{ref18}  The high-frequency inertial data from the IMU effectively bridges the gaps between camera frames and provides robustness against visual degradation.\cite{ref20}  Concurrently, the visual data, which provides drift-free measurements relative to the static environment, is used to continuously correct for the IMU's accumulating drift.8 This tight integration allows for the real-time estimation of the vehicle's full six-Degrees-of-Freedom (6-DOF) state (position and orientation), which is the core problem that VINS aims to solve.\cite{ref16} 
+
+\subsubsection{Scope and Structure of the Review}
+This literature review provides a comprehensive analysis of Visual-Inertial Navigation Systems tailored for autonomous UAV operation in GPS-restricted environments. The review focuses primarily on the fundamental principles underpinning VINS and the seminal algorithms that have defined the state-of-the-art. Section 2 deconstructs the foundational sensor components, the IMU and the camera, detailing their operating principles and critical error models. Section 3 explores the core architectural paradigms that govern VINS design, comparing data fusion strategies (loosely- vs. tightly-coupled) and back-end state estimation methodologies (filtering vs. optimization). Section 4 presents a detailed review of four prominent and widely-used VINS algorithms: MSCKF, OKVIS, VINS-Mono, and ORB-SLAM3, analyzing their key innovations, strengths, and limitations. Finally, Section 5 discusses the unique challenges of implementing VINS on UAV platforms and examines emerging trends and future research directions that are shaping the next generation of autonomous navigation systems.
+
+\subsection{Foundational Components of Visual-Inertial Systems}
+A deep understanding of VINS requires a thorough analysis of its constituent sensors. The performance of any VINS algorithm is fundamentally limited by the quality of the data it receives and the fidelity of the models used to interpret that data. This section details the working principles and, critically, the error characteristics of the IMU and the visual camera, which are essential for designing high-performance estimation algorithms.
+
+\subsubsection{The Inertial Measurement Unit (IMU): Principles and Error Modeling}
+\paragraph{Working Principles of MEMS IMUs}
+An Inertial Measurement Unit is an electromechanical device that measures a body's specific force and angular rate using a combination of accelerometers and gyroscopes.\cite{ref19} For UAV applications, MEMS-based IMUs are the standard choice due to their exceptional advantages in size, weight, power, and cost (SWaP-C).\cite{ref19}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/imu_axes.jpg}
+    \caption{Image depicting the accelerometers and gyroscopes in the three axes of movement. Each accelerometer and gyroscope is positioned at $90^{\circ}$ to the others (orthogonally). Accelerometers measure motion along each axis and each gyroscope measures angular velocity around each axis.\cite{ref19}}
+    \label{fig:imu_axes}
+\end{figure}
+
+A typical MEMS accelerometer operates on the principle of a proof mass suspended by springs within a reference frame. When the unit accelerates, the inertia of the proof mass causes it to displace relative to the frame. This displacement is measured, often by detecting the change in capacitance between the proof mass and a set of fixed electrodes, and is directly proportional to the applied linear acceleration.\cite{ref19}
+A MEMS gyroscope commonly utilizes the Coriolis effect to measure angular velocity. A proof mass is driven to resonate along a specific axis. When the entire unit is subjected to rotation, the Coriolis force induces a secondary vibration in the proof mass along an axis perpendicular to both the drive axis and the axis of rotation. The magnitude of this secondary vibration, also measured capacitively, is proportional to the angular rate of the gyroscope.\cite{ref19}
+\paragraph{The IMU Measurement Model and Error Formulation}
+The raw outputs from a low-cost MEMS IMU are not a direct measure of the true kinematics; they are corrupted by a combination of deterministic and stochastic errors that must be accurately modeled to prevent rapid degradation of the navigation solution.\cite{ref21} The standard measurement model for a gyroscope and an accelerometer includes several key error terms:
+\begin{itemize}
+    \item \textbf{Bias ($b_g, b_a$):} This represents a persistent offset in the sensor output. It is typically modeled as the sum of a constant turn-on bias and a slowly time-varying component known as bias instability or in-run bias. This time-varying component is crucial to estimate online and is often modeled as a random walk.\cite{ref19}
+    \item \textbf{Scale Factor Error ($s_g, s_a$):}  This is a multiplicative error representing a deviation in the sensor's sensitivity. For a 3-axis sensor, this can be a full matrix including cross-axis sensitivity terms, which measure how an input on one axis affects the output on another.\cite{ref19},\cite{ref21}
+    \item \textbf{Noise ($n_g, n_a$):}This is a high-frequency, zero-mean random fluctuation in the sensor output. It is typically modeled as additive white Gaussian noise, characterized by its noise density. When integrated, this noise leads to an error that grows with the square root of time, known as Angle Random Walk (ARW) for gyroscopes and Velocity Random Walk (VRW) for accelerometers.\cite{ref19}
+\end{itemize}
+
+Accurate VINS performance relies on the online estimation of these error terms, particularly the biases, which are included as part of the state vector in the filter or optimizer.\cite{ref22}
+
+\paragraph{IMU Pre-integration}
+A critical innovation for modern tightly-coupled VINS is IMU pre-integration. IMUs typically provide measurements at a much higher frequency (e.g., 200–1000 Hz) than cameras (e.g., 20–30 Hz).\cite{ref18} Including a state for every IMU measurement in an optimization-based framework would be computationally prohibitive. IMU pre-integration elegantly solves this problem by analytically combining all the inertial measurements between two consecutive camera keyframes into a single relative motion constraint.
+This process integrates the IMU measurements in the local body frame. A crucial aspect of this formulation is that these pre-integrated terms are expressed relative to the state at the first keyframe and are only dependent on the IMU biases, not the absolute orientation, velocity, or position. This means that if the optimization algorithm updates its estimate of the IMU biases, the pre-integration constraint can be efficiently re-evaluated using first-order corrections without needing to re-propagate all the raw IMU measurements from scratch. This makes tightly-coupled, optimization-based VINS computationally feasible.
+
+
+\subsubsection{The Visual Sensor: Monocular vs. Stereo Configurations}
+The choice of camera configuration is a fundamental design decision in VINS, with significant trade-offs between cost, complexity, and performance.\cite{ref23}
+
+\paragraph{Monocular VINS}
+A monocular VINS uses a single camera. The primary advantages of this configuration are its minimal hardware cost, low weight and power consumption, and simplicity, making it an ideal choice for small, payload-constrained UAVs.\cite{ref24}
+The fundamental limitation of a monocular camera is its inherent inability to observe absolute scale from a single 2D image. It can only determine the 3D structure of the environment and its own trajectory up to an unknown scale factor.\cite{ref25} This is a geometric reality: a single projection provides information about the bearing of a point in space, but not its distance.\cite{ref24}
+The fusion with an IMU is what elevates a monocular system from a relative, scale-less estimator to a full, metric state estimator. The IMU's accelerometer provides measurements of specific force (including gravity) in absolute metric units (m/s²). By tightly coupling these metric inertial measurements with the scaled visual geometry from the camera, the VINS estimator can observe and resolve the absolute scale of the trajectory and the map.\cite{ref24} This observability, however, is not instantaneous. It requires the UAV to undergo sufficient acceleration during an initialization phase for the scale to become well-constrained.\cite{ref24}
+\paragraph{Stereo VINS}
+A stereo VINS employs a pair of cameras with a fixed, known baseline. The primary advantage of this setup is its ability to perceive depth directly and instantaneously. By identifying the same feature in both the left and right images, its 3D position can be calculated through triangulation.\cite{ref23} This provides an absolute scale for the visual measurements from the very first frame, without requiring any specific motion for initialization.\cite{ref25} This leads to generally more robust and accurate state estimation.\cite{ref23}
+The main disadvantages are the increased hardware cost, size, weight, and complexity.\cite{ref23} A stereo rig requires precise extrinsic calibration to know the exact transformation between the two cameras, and the system must bear the computational load of processing two image streams.\cite{ref23} Furthermore, the effectiveness of stereo vision is range-dependent. As the distance to observed features becomes very large relative to the camera baseline, the stereo system's depth estimation capability degrades, and it effectively degenerates to the monocular case.\cite{ref25}
+
+\subsection{Core VINS Architectures: Fusion and Estimation Strategies}
+The design of a VINS algorithm is defined by two fundamental architectural choices: the method used to fuse data from the visual and inertial sensors, and the mathematical framework used to estimate the state. These choices determine the system's accuracy, robustness, and computational profile.
+
+\subsubsection{Data Fusion Paradigms: Loosely-Coupled vs. Tightly-Coupled Approaches}
+\paragraph{Loosely-Coupled VINS}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/loose_coupling.jpg}
+    \caption{Loosely-coupled architecture which uses an IMU and a GNSS receiver. Similarly, instead of a GNSS receiver, a VINS system can use a visual odometry system.\cite{ref26}}
+    \label{fig:loose_coupling}
+\end{figure}
+
+In a loosely-coupled architecture, the visual and inertial components function as independent estimation modules that are fused at a high level.\cite{ref26} The typical data flow involves a visual odometry or VSLAM system producing a 6-DOF pose estimate, while the IMU measurements are integrated to produce a separate pose estimate. A final fusion filter then combines these two independent pose solutions to generate the final state estimate.\cite{ref26}
+The primary advantage of this approach is its modularity and simplicity.\cite{ref26} However, this simplicity comes at the cost of performance. Loosely-coupled fusion is inherently sub-optimal because it discards the rich statistical correlations that exist between the raw visual features and the raw inertial measurements.\cite{ref27} If the vision system fails temporarily, it provides no output to the fusion filter, forcing the system to rely solely on the drifting IMU integration.\cite{ref26}
+
+\paragraph{Tightly-Coupled VINS}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{images/tight_coupling.jpg}
+    \caption{Tightly-coupled architecture which uses an IMU and a GNSS receiver. The GNSS system can be replaced with a visual odometry system.\cite{ref26}}
+    \label{fig:tight_coupling}
+\end{figure}
+
+In contrast, a tightly-coupled architecture is the dominant paradigm in modern, high-performance VINS.\cite{ref27} This approach establishes a single, unified estimation framework that directly fuses the raw measurements from both sensors.\cite{ref26} The state estimator, whether a filter or an optimizer, processes visual feature measurements and raw IMU measurements simultaneously within a joint probabilistic model.\cite{ref28}
+The principal benefit of tight coupling is superior accuracy and robustness. By considering all raw measurements in a single estimation problem, the framework can fully exploit the statistical correlations between them, leading to a more constrained and optimal solution.\cite{ref27} The ability to leverage partial information is a key differentiator; even if only a few features are tracked, a tightly-coupled system can use that limited information to mitigate drift, whereas a loosely-coupled system might declare a total tracking failure.\cite{ref26} The main drawback of this approach is its significantly higher implementation complexity.\cite{ref26}
+
+\subsubsection{Back-End State Estimation: Filtering vs. Optimization}
+The "back-end" of a VINS is the core computational engine that performs the state estimation. The two primary approaches are filtering and optimization (also known as smoothing).\cite{ref29}
+
+\paragraph{Filtering-Based VINS}
+Filtering-based methods recursively estimate the current state of the system by incorporating measurements as they arrive. The most prevalent method in this category is the Extended Kalman Filter (EKF).\cite{ref30} The EKF operates in a continuous two-step cycle:
+
+\begin{enumerate}
+    \item \textbf{Prediction (or Propagation):} The system's dynamic model, driven by the IMU measurements, is used to propagate the state estimate and its associated uncertainty forward in time.\cite{ref30}
+
+    \item \textbf{Update (or Correction):}  When a new measurement from the camera becomes available, the filter compares the actual measurement with a predicted measurement. The difference, or "innovation," is used to correct the state estimate and reduce its uncertainty.\cite{ref30}
+.
+\end{enumerate}
+The primary advantages of filtering-based VINS are their computational efficiency and low memory footprint, making them well-suited for resource-constrained UAVs.\cite{ref29} However, their main drawback lies in the linearization required by the EKF, which can introduce significant errors and lead to filter inconsistency, where the filter becomes erroneously overconfident in an inaccurate state estimate.\cite{ref31}
+
+\paragraph{Optimization-Based VINS}
+Optimization-based methods, also known as smoothing methods, have become the standard for high-accuracy VINS. They formulate the state estimation problem as a large-scale nonlinear least-squares minimization. The objective is to find the trajectory and map structure that best explain all available sensor measurements over a period of time by minimizing a cost function. This joint optimization is a generalization of the Bundle Adjustment (BA) technique from computer vision.\cite{ref32}
+
+The cost function is typically a sum of weighted squared errors from visual and inertial sources.\cite{ref28} Since optimizing over the entire trajectory is computationally infeasible, these methods employ a sliding window approach, restricting the optimization to a bounded window of the most recent states and measurements.\cite{ref28} Old states are marginalized, summarizing their information as a probabilistic prior on the remaining states to maintain fixed computational complexity.\cite{ref28}
+The principal advantage of optimization-based methods is their superior accuracy. By considering a batch of measurements simultaneously, they can iteratively re-linearize the problem, which significantly mitigates the single-point linearization errors that plague the EKF.\cite{ref29}
+
+\subsection{A Review of Prominent VINS Algorithms}
+The landscape of VINS solutions is rich and varied, having evolved from purely geometric, filter-based methods to sophisticated optimization and deep learning-based systems.
+
+\subsubsection{Filter-Based Methods (e.g., MSCKF, OKVIS)}
+These methods utilize a probabilistic filtering framework, most commonly the Extended Kalman Filter (EKF), to maintain and propagate a probabilistic estimate of the UAV's state. The core idea of the seminal Multi-State Constraint Kalman Filter (MSCKF) is to avoid adding 3D feature points directly into the state vector, which would make it grow unboundedly. Instead, it maintains a history of recent camera poses in the state vector. When a feature is observed across multiple of these camera poses, it imposes a geometric constraint on them, which is then used in the filter's update step to correct the state and limit IMU drift \cite{refnew2}.
+
+\begin{itemize}
+    \item \textbf{Advantages:} Their primary strength is computational efficiency. By keeping the state size small and marginalizing old states, they operate with a consistent and low computational footprint, making them highly suitable for platforms with limited processing power~\cite{refnew3}.
+    \item \textbf{Disadvantages:} This efficiency comes at the cost of accuracy. The EKF relies on a first-order linearization of non-linear system dynamics, which can introduce significant errors, especially during fast rotations. The act of marginalizing past states also prevents re-linearization using newer measurements, leading to statistically inconsistent and less accurate estimates compared to modern optimization techniques~\cite{refnew4}.
+\end{itemize}
+
+\subsubsection{Optimization-Based Methods (e.g., VINS-Mono, ORB-SLAM3): }
+In contrast to filters, these methods formulate VINS as a non-linear least-squares optimization problem. They collect measurements over a period of time and solve for a trajectory that best explains all measurements simultaneously. This is typically done over a sliding window of recent states to ensure real-time performance. The cost function being minimized includes two main terms: the photometric reprojection error, which measures the discrepancy between observed visual features and their predicted locations based on the estimated 3D structure and camera poses, and the IMU pre-integration error, which summarizes the IMU measurements between consecutive camera frames into a single relative motion constraint\cite{refnew5}.
+
+\begin{itemize}
+    \item \textbf{Advantages:} These methods achieve superior accuracy by repeatedly re-linearizing the problem and performing joint optimization over multiple poses and feature locations in a process called Bundle Adjustment (BA). VINS-Mono was a landmark system demonstrating that a tightly-coupled, optimization-based monocular VIO could achieve high-accuracy results in real-time on a mobile device~\cite{ref6}. ORB-SLAM3 further advances this by being a complete multi-map and multi-sensor system, able to perform visual, visual-inertial, and multi-session SLAM with unparalleled robustness and accuracy~\cite{ref7}.
+    \item \textbf{Disadvantages:} The main weakness is their reliance on the static world assumption. They assume that all feature points correspond to stationary objects. When this assumption is violated by moving cars, pedestrians, or even swaying foliage, incorrect data associations are made, leading to a degradation of accuracy or outright tracking failure~\cite{ref8}. Additionally, the computational cost, while managed by sliding window techniques, is inherently higher than that of filter-based approaches.
+\end{itemize}
+
+\subsubsection{DROID-SLAM}
+This system represents a significant step forward in end-to-end learning for SLAM. It treats SLAM as an iterative refinement problem, using a recurrent neural network to process video frames and update a dense, per-pixel depth map and camera poses. Its core innovation is a Dense Bundle Adjustment (DBA) layer, which is a differentiable module that enforces geometric consistency across the entire video, allowing for end-to-end training with only a photometric loss~\cite{refnew9}.
+
+\begin{itemize}
+    \item \textbf{Advantages:} DROID-SLAM achieves state-of-the-art accuracy and robustness, particularly in its resistance to initialization failures and tracking loss in challenging, low-texture scenes. The learned data priors help it to regularize the ill-posed monocular depth estimation problem effectively~\cite{refnew9}.
+    \item \textbf{Disadvantages:} Its dense nature makes it extremely computationally intensive, requiring a high-end GPU to run in real-time. This makes it largely unsuitable for deployment on size, weight, and power (SWaP)-constrained UAV platforms.
+\end{itemize}
+
+\subsubsection{DPVO (Deep Patch Visual Odometry)}
+Seeking to combine the accuracy of learning-based methods with greater efficiency, DPVO uses a recurrent network to track a sparse set of image patches, rather than computing dense optical flow. This approach is inspired by traditional sparse feature tracking but replaces handcrafted feature descriptors with learned patch representations~\cite{refnew10}.
+
+\begin{itemize}
+    \item \textbf{Advantages:} DPVO is significantly more efficient than DROID-SLAM, running up to 3x faster and using only a third of the GPU memory while achieving comparable or better accuracy. This makes it a more viable candidate for real-time applications~\cite{ref10}.
+    \item \textbf{Disadvantages:} A key limitation is its reliance on supervised training, which requires ground truth pose and flow data. This data is often sourced from synthetic datasets, creating a potential sim-to-real domain gap that can affect its generalization performance in novel, real-world environments~\cite{refnew10}.
+\end{itemize}
+
+\subsubsection{LRD-SLAM}
+This system exemplifies a powerful hybrid approach. It augments the highly-refined, geometry-based ORB-SLAM3 with a parallel thread running a lightweight deep learning model for object detection (e.g., YOLOv5). This thread provides semantic information, allowing the main SLAM pipeline to identify and reject feature points that lie on pre-defined dynamic object classes~\cite{refnew11}.
+
+\begin{itemize}
+    \item \textbf{Advantages:} It directly mitigates the primary failure mode of traditional SLAM by robustly handling dynamic environments. This results in a significant boost in localization accuracy and system robustness in real-world scenarios, while maintaining the real-time performance of the underlying ORB-SLAM3 framework~\cite{refnew11}.
+    \item \textbf{Disadvantages:} Its effectiveness is fundamentally limited by the capabilities of the object detector. It cannot handle moving objects that do not belong to one of its known classes, and its performance may degrade if the detector is not robust to different viewpoints or lighting conditions.
+\end{itemize}
+
+\subsubsection{CUAHN-VIO}
+This is a specialized VIO system designed for agile MAVs equipped with a downward-facing camera. Its vision front-end is a neural network that estimates the 2D homography transformation between frames, which is valid for planar scenes. Crucially, the network is also trained to predict its own uncertainty, providing a confidence score for each homography estimate~\cite{refnew12}.
+
+\begin{itemize}
+    \item \textbf{Advantages:} The system is highly robust to severe motion blur encountered during high-speed flight. The predicted uncertainty is used by the EKF back-end to adaptively weight the visual measurements, ignoring them when the network is uncertain (e.g., due to non-planar objects) and relying more on the IMU. This results in a stable and low-latency ($\sim$26ms) system capable of running on embedded processors~\cite{refnew12}.
+    \item \textbf{Disadvantages:} Its core reliance on a homography model restricts its application to scenarios where the UAV is flying over predominantly planar surfaces. Its performance would degrade significantly in environments with large, non-planar 3D structures.
+\end{itemize}
+
+\subsection{Summary}
+Autonomous UAV navigation in GPS-restricted or GPS-denied environments (urban canyons, indoors, under canopy) demands sensor-centric localization that is both accurate and robust. Visual-Inertial Navigation Systems (VINS) have emerged as the leading approach because they fuse complementary modalities: cameras provide rich, drift-free geometric constraints while low-cost MEMS IMUs deliver high-rate motion cues that bridge visual dropouts. The review shows that this complementarity is most effectively exploited in tightly-coupled pipelines that ingest raw feature measurements and IMU pre-integration within a single probabilistic estimator, outperforming loosely-coupled schemes that fuse only pose outputs. On the estimation back-end, optimization/smoothing with sliding-window bundle adjustment typically yields higher accuracy and better consistency than filtering (EKF), at the cost of greater compute and implementation complexity.
+
+At the sensor level, the IMU error model (biases, scale-factor, noise) and camera configuration (monocular vs stereo) set fundamental limits: monocular systems require motion-rich initialization to resolve metric scale, whereas stereo adds hardware complexity but gives instant scale. A critical enabling technique is IMU pre-integration, which compresses hundreds of IMU samples between keyframes into a bias-aware relative motion factor, making tight fusion tractable in real time.
+
+Algorithmically, classical filter-based VIO (e.g., MSCKF) is efficient and suitable for constrained hardware but is more sensitive to linearization errors. Optimization-based VIO/SLAM (e.g., VINS-Mono, ORB-SLAM3) achieves state-of-the-art accuracy via joint re-linearization, loop closure, and online calibration. Building on these, recent trends incorporate learning: fully end-to-end dense methods (e.g., DROID-SLAM) improve robustness in low-texture scenes but are GPU-heavy, while sparse learned patch trackers (e.g., DPVO) strike a better accuracy-efficiency balance. Hybrid, semantics-aware systems (e.g., augmenting ORB-SLAM3 with lightweight object detectors) explicitly down-weight or mask dynamic objects, mitigating the principal real-world failure mode of geometry-only pipelines. Specialized designs (e.g., homography-based VIO for planar, high-speed flight) further demonstrate task-specific robustness by coupling learned uncertainty with adaptive fusion.
+
+Across the literature, the hard problems are consistent: (i) IMU drift without frequent visual corrections, (ii) low-texture, low-light, motion-blur and high dynamics that reduce reliable features, (iii) initialization and scale observability for monocular setups, and (iv) computational budget on SWaP-constrained UAVs. The converging direction is clear: tightly-coupled, optimization-based VINS augmented by semantics (to handle dynamics), principled sensor error modeling and pre-integration, and deployment-minded engineering (time synchronization, calibration, and resource management) to meet real-time constraints on embedded platforms. This synthesis positions VINS as the most practical pathway to reliable, high-accuracy UAV autonomy where GPS is unreliable or unavailable.
+
+\begin{table}[H] 
+\centering 
+\scriptsize % reduces font size 
+\caption{Comparison of Prominent VINS Algorithms} 
+\begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{4.5cm}|p{4.5cm}|} 
+\hline \textbf{Algorithm} & \textbf{Core Method} & \textbf{Coupling} & \textbf{Camera Support} & \textbf{Key Innovations \& Strengths} & \textbf{Key Limitations \& Challenges} \\ 
+
+\hline MSCKF & Filter-based (EKF) & Tightly & Monocular, Stereo & 
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Efficiency: Avoids adding features to state vector, linear complexity 
+  \item Consistency: Good consistency properties in later versions.
+  \item Accuracy in low-texture scenes.
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Accuracy: Generally less accurate than optimization methods.
+  \item Sensitive to tuning
+  \item Delayed update can be suboptimal.
+\end{itemize} \\
+
+\hline OKVIS & Optimization-based (BA) & Tightly & Stereo, Monocular & 
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+\item Accuracy: High accuracy via joint nonlinear optimization of visual and inertial errors. 
+\item Keyframe Paradigm: Bounded complexity for real-time use.
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+\item Complexity: Higher computational cost than filters. 
+\item Highly sensitive to sensor calibration and synchronization.
+\end{itemize} \\
+
+\hline VINS-Mono & Optimization-based (BA) & Tightly & Monocular & 
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+\item Robustness \& Versatility: Excellent all-around performance. 
+\item Robust Initialization: Can bootstrap from unknown states. 
+\item Includes loop closure and online calibration.
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+\item Monocular setup requires motion for initialization. 
+\item Performance can degrade in challenging lighting without extensions (e.g., PC-VINS-Mono).
+\end{itemize} \\
+
+\hline ORB-SLAM3 & Optimization-based (MAP/BA) & Tightly & Monocular, Stereo, RGB-D & 
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+\item Long-Term Autonomy: Multi-map system (\textit{Atlas}) survives tracking loss and enables map reuse. 
+\item Accuracy: MAP-based estimation provides state-of-the-art accuracy.
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+\item Complexity: Highly complex codebase. 
+\item Primarily a SLAM system, may be overkill for pure odometry tasks. 
+\end{itemize} \\
+
+\hline \end{tabular} \label{tab:VINS_comparison} \end{table}
+
+\begin{table}[H]
+\centering
+\scriptsize % reduces font size
+\caption{Comparison of Deep Learning-based VINS Algorithms}
+\begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{4.5cm}|p{4.5cm}|}
+\hline
+\textbf{Algorithm} & \textbf{Core Method} & \textbf{Learning Paradigm} & \textbf{Camera Support} & \textbf{Key Innovations \& Strengths} & \textbf{Key Limitations \& Challenges} \\
+\hline
+DROID-SLAM & End-to-end Neural SLAM (Dense BA layer) & Self-Supervised & Monocular & 
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Dense Bundle Adjustment (DBA) layer with differentiable geometry. 
+  \item Strong robustness against initialization failure and tracking loss.
+  \item Accuracy in low-texture scenes.
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Computationally heavy: Requires high-end GPU for real-time performance.
+  \item High power consumption 
+  \item unsuitable for SWaP-constrained UAVs.
+\end{itemize} \\
+
+\hline
+DPVO & Sparse Patch-based Neural VO & Supervised & Monocular & 
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+ \item Combines learned patch descriptors with sparse feature tracking. 
+ \item Runs $\sim$3x faster than DROID-SLAM with significantly lower memory usage. 
+ \item Maintains competitive accuracy. 
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+ \item Requires ground-truth pose/flow for training. 
+ \item Risk of sim-to-real domain gap reduces generalization in unseen environments.
+\end{itemize} \\
+
+\hline
+LRD-SLAM & Hybrid: Geometry + Deep Object Detection & Supervised (Detector) & Monocular, Stereo & 
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+ \item Adds semantic awareness to ORB-SLAM3 pipeline via object detection (e.g., YOLOv5). 
+ \item Robust against dynamic objects, improves real-world tracking stability. 
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+ \item Limited to pre-defined object classes. 
+ \item Detector must generalize well across lighting/viewpoints; otherwise performance degrades.
+\end{itemize} \\
+
+\hline
+CUAHN-VIO & Neural Homography Front-End + EKF Back-End & Supervised with Uncertainty Prediction & Downward-facing Monocular &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+     \item Learns homography with uncertainty estimation. 
+     \item Robust to high-speed motion blur. 
+     \item Runs at $\sim$26 ms latency on embedded hardware. 
+     \item Adaptive EKF weighting improves stability.
+    \end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+     \item Homography assumption limits use to mostly planar surfaces. 
+     \item Accuracy drops significantly in 3D-structured environments.
+\end{itemize} \\
+\hline
+\end{tabular}
+\label{tab:DL_VINS_comparison}
+\end{table}
+
+
+
+

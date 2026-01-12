@@ -1,0 +1,74 @@
+% !TEX root = main.tex
+
+\documentclass[12pt,a4paper]{article}
+\usepackage{graphicx} % For including images
+\usepackage{enumitem}
+\usepackage{geometry} % Adjust page margins
+\usepackage{setspace} % For line spacing
+\usepackage{titlesec} % For section formatting
+\usepackage{tocloft} % For TOC formatting
+\usepackage{float}  % allows H specifier
+\usepackage[backend=biber,style=ieee]{biblatex}
+\usepackage{pgfgantt} % put in preamble
+\addbibresource{references.bib}  % name of your .bib file
+
+
+% Page setup
+\geometry{margin=1in}
+\setstretch{1.3} % Line spacing
+
+
+\title{
+{\Huge \textbf{Project Proposal}} \\[1cm]  % Only this line is larger
+\textbf{Visual-Inertial Navigation \\ 
+for Autonomous UAV Operation \\ 
+in GPS-Restricted Environments}
+\vspace{4cm}
+}
+
+
+\author{
+\textbf{Project Supervisors - Internal:} \\
+Prof. Chandana Gamage \\
+\\
+\textbf{Group Members:} \\
+\begin{tabular}{l l} % Two columns, left-aligned, no borders
+D. V. A. I. Delgahagoda & 210113L \\
+T. T. Kashmeera & 210279A \\
+K. D. R. P. Rathnayake & 210537N \\
+\end{tabular}
+\vspace{4cm}
+}
+\date{} 
+\begin{document}
+
+\maketitle
+\begin{center}
+Department of Computer Science and Engineering \\
+University of Moratuwa
+\end{center}
+\thispagestyle{empty} % No page number on title page
+
+\newpage
+\renewcommand{\contentsname}{\Large \textbf{Table of Content}}
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+\renewcommand{\listfigurename}{\Large \textbf{Table of Figures}}
+\listoffigures
+\thispagestyle{empty} % Optional: no page number on this page
+
+\newpage
+\setcounter{page}{1} % Start numbering from here
+
+\input{sections/1_introduction.tex}
+\input{sections/2_problem_statement.tex}
+\input{sections/3_research_objectives}
+\input{sections/4_literature_review}
+\input{sections/5_methodology}
+\input{sections/6_research_timeline}
+\input{sections/7_conclusion}
+\input{sections/8_references}
+
+\end{document}

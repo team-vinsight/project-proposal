@@ -1,0 +1,67 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Overview of UAVs and Their Applications}{1}{}%
+\contentsline {subsection}{\numberline {1.2}The Critical Role of Navigation Systems}{1}{}%
+\contentsline {subsection}{\numberline {1.3}Challenges in GPS-Restricted Environments}{1}{}%
+\contentsline {subsection}{\numberline {1.4}Introduction to Visual-Inertial Navigation Systems (VINS)}{2}{}%
+\contentsline {subsection}{\numberline {1.5}Purpose and Scope of the Project}{2}{}%
+\contentsline {section}{\numberline {2}Problem Statement}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Limitations of GPS in Challenging Environments}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Impact on Autonomous UAV Operations}{3}{}%
+\contentsline {subsection}{\numberline {2.3}Summary}{4}{}%
+\contentsline {section}{\numberline {3}Research Objectives}{4}{}%
+\contentsline {subsection}{\numberline {3.1}Inertial-Only IMU Drift}{5}{}%
+\contentsline {subsection}{\numberline {3.2}Visual Tracking in Low-Texture/Dynamic Scenes}{5}{}%
+\contentsline {subsection}{\numberline {3.3}VINS Initialization and Scale Ambiguity}{5}{}%
+\contentsline {subsection}{\numberline {3.4}Real-Time VINS Computational Demands}{6}{}%
+\contentsline {subsection}{\numberline {3.5}Compound Environmental Degradation (Poor Lighting, Motion Blur, Dynamic Objects)}{6}{}%
+\contentsline {subsection}{\numberline {3.6}Summary}{6}{}%
+\contentsline {section}{\numberline {4}Literature Review}{7}{}%
+\contentsline {subsection}{\numberline {4.1}The Challenge of Autonomous Navigation in GPS-Restricted Environments}{7}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}The Imperative for GPS-Independent Navigation}{7}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}Visual-Inertial Navigation Systems (VINS) as a Premier Solution}{7}{}%
+\contentsline {subsubsection}{\numberline {4.1.3}Scope and Structure of the Review}{8}{}%
+\contentsline {subsection}{\numberline {4.2}Foundational Components of Visual-Inertial Systems}{9}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}The Inertial Measurement Unit (IMU): Principles and Error Modeling}{9}{}%
+\contentsline {paragraph}{Working Principles of MEMS IMUs}{9}{}%
+\contentsline {paragraph}{The IMU Measurement Model and Error Formulation}{10}{}%
+\contentsline {paragraph}{IMU Pre-integration}{10}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}The Visual Sensor: Monocular vs. Stereo Configurations}{11}{}%
+\contentsline {paragraph}{Monocular VINS}{11}{}%
+\contentsline {paragraph}{Stereo VINS}{11}{}%
+\contentsline {subsection}{\numberline {4.3}Core VINS Architectures: Fusion and Estimation Strategies}{12}{}%
+\contentsline {subsubsection}{\numberline {4.3.1}Data Fusion Paradigms: Loosely-Coupled vs. Tightly-Coupled Approaches}{12}{}%
+\contentsline {paragraph}{Loosely-Coupled VINS}{12}{}%
+\contentsline {paragraph}{Tightly-Coupled VINS}{13}{}%
+\contentsline {subsubsection}{\numberline {4.3.2}Back-End State Estimation: Filtering vs. Optimization}{13}{}%
+\contentsline {paragraph}{Filtering-Based VINS}{13}{}%
+\contentsline {paragraph}{Optimization-Based VINS}{14}{}%
+\contentsline {subsection}{\numberline {4.4}A Review of Prominent VINS Algorithms}{14}{}%
+\contentsline {subsubsection}{\numberline {4.4.1}Filter-Based Methods (e.g., MSCKF, OKVIS)}{14}{}%
+\contentsline {subsubsection}{\numberline {4.4.2}Optimization-Based Methods (e.g., VINS-Mono, ORB-SLAM3): }{15}{}%
+\contentsline {subsubsection}{\numberline {4.4.3}DROID-SLAM}{16}{}%
+\contentsline {subsubsection}{\numberline {4.4.4}DPVO (Deep Patch Visual Odometry)}{16}{}%
+\contentsline {subsubsection}{\numberline {4.4.5}LRD-SLAM}{17}{}%
+\contentsline {subsubsection}{\numberline {4.4.6}CUAHN-VIO}{17}{}%
+\contentsline {subsection}{\numberline {4.5}Summary}{18}{}%
+\contentsline {section}{\numberline {5}Methodology}{20}{}%
+\contentsline {subsection}{\numberline {5.1}Proposed Solution}{20}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}Why It Is Chosen}{21}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}Advantages}{21}{}%
+\contentsline {subsubsection}{\numberline {5.1.3}Disadvantages}{22}{}%
+\contentsline {subsection}{\numberline {5.2}Datasets \& Benchmark-First Validation Plan}{22}{}%
+\contentsline {subsection}{\numberline {5.3}System Architecture}{23}{}%
+\contentsline {subsection}{\numberline {5.4}Hardware/Software Configuration}{24}{}%
+\contentsline {subsection}{\numberline {5.5}Evaluation Methodology}{24}{}%
+\contentsline {subsection}{\numberline {5.6}Success Criteria (Definition of Done)}{25}{}%
+\contentsline {section}{\numberline {6}Project Management}{26}{}%
+\contentsline {subsection}{\numberline {6.1}Project Activity Timeline}{26}{}%
+\contentsline {subsubsection}{\numberline {6.1.1}Phase 1: Problem Formulation and Requirement Analysis}{26}{}%
+\contentsline {subsubsection}{\numberline {6.1.2}Phase 2: Resource Gathering}{26}{}%
+\contentsline {subsubsection}{\numberline {6.1.3}Phase 3: Model Evaluation}{27}{}%
+\contentsline {subsubsection}{\numberline {6.1.4}Phase 4: Drone Integration}{28}{}%
+\contentsline {subsubsection}{\numberline {6.1.5}Phase 5: Model Improvements and Drone Swarm Exploration}{28}{}%
+\contentsline {subsubsection}{\numberline {6.1.6}Phase 6: Documentation and Dissemination}{29}{}%
+\contentsline {subsection}{\numberline {6.2}Proposed Task Allocation}{29}{}%
+\contentsline {subsection}{\numberline {6.3}Summary of Phases}{30}{}%
+\contentsline {section}{\numberline {7}Conclusion}{32}{}%
+\contentsline {section}{\numberline {8}References}{32}{}%

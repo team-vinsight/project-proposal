@@ -1,0 +1,32 @@
+\section{Research Objectives}
+
+Visual-Inertial Navigation Systems (VINS) offer a powerful framework for enabling UAV autonomy in GPS-restricted environments. However, their practical deployment is challenged by several limitations that arise from sensor imperfections, environmental conditions, and computational constraints. To ensure reliable navigation and robust performance, it is essential to explicitly address these key issues. The main problems this research seeks to overcome are outlined below:
+
+\subsection{Inertial-Only IMU Drift} Inertial-only navigation (using only IMU data) accumulates sensor errors over time, causing the estimated trajectory to drift unboundedly \cite{ref9}. In practice, biases and noise integrate into large position/attitude errors if not corrected by external references. Without GPS or vision updates, this long-term drift makes pure INS unreliable for GPS-denied flight.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\textwidth]{images/imu_drift.jpg}
+        \caption{Visualization of IMU drift in UAVs \cite{imgref2}.}
+        \label{fig:imu_drift}
+    \end{figure}
+
+    \subsection{Visual Tracking in Low-Texture/Dynamic Scenes} Vision-based navigation relies on tracking environmental features. In low-texture or uniform areas (e.g., blank walls or repetitive patterns), feature descriptors lack distinctiveness and matching often fails \cite{ref10}. Likewise, highly dynamic scenes with many moving objects leave few stable landmarks, causing the visual tracker (and thus VINS) to lose lock or fail completely \cite{ref10}.
+    
+    \subsection{VINS Initialization and Scale Ambiguity} Monocular VINS cannot infer absolute scale from vision alone, so the initialized map’s scale is ambiguous \cite{ref11}. Proper initialization also requires rich motion (translations/rotations) to excite all degrees of freedom; for example, VINS-Mono must execute full 3-axis maneuvers to observe gravity and scale, which is time-consuming and resource-intensive \cite{ref9}. If these conditions are not met, the estimator may diverge or converge to a wrong scale.
+    
+    \subsection{Real-Time VINS Computational Demands} Tightly-coupled VINS algorithms fuse high-rate IMU and image data via nonlinear optimization or filtering, which is computationally expensive. For instance, VINS-Mono’s sliding-window bundle-adjustment ran at only $\sim$9\,Hz on typical UAV hardware, failing to meet real-time requirements on a low-cost platform \cite{ref9}. In general, ensuring real-time performance requires significant CPU/GPU resources, which may be beyond small UAV capabilities.
+    
+    \subsection{Compound Environmental Degradation (Poor Lighting, Motion Blur, Dynamic Objects)} In severely degraded conditions combining multiple factors, VINS performance collapses. Extensive motion blur (from fast motion or low light) prevents reliable feature tracking \cite{ref12}, and scenes dominated by dynamic objects (e.g., $>$80\% moving targets) provide too few static cues, leading to localization failure \cite{ref11}. Together, these adverse effects can overwhelm the system, causing the estimator to lose track and diverge.
+
+
+\subsection{Summary}
+
+Listed below is a summary of the key project objectives.
+\begin{itemize}
+\item Minimize IMU drift through effective fusion of visual and inertial data to maintain stable localization without GPS.
+\item Enhance visual tracking robustness in low-texture and dynamic environments to ensure continuous navigation.
+\item Address scale ambiguity and improve VINS initialization for more accurate trajectory estimation.
+\item Optimize VINS computational efficiency to achieve real-time performance on resource-constrained UAV platforms.
+\item Improve system resilience under compound environmental degradations such as poor lighting, motion blur, and high scene dynamics.
+\end{itemize}

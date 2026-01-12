@@ -1,0 +1,233 @@
+\section{Project Management}
+
+\subsection {Project Activity Timeline}
+
+\subsubsection{Phase 1: Problem Formulation and Requirement Analysis}
+This initial stage lays the foundation for the entire project by ensuring that the problem is well-defined, relevant, and achievable. It establishes a clear direction and avoids scope creep later.
+
+\begin{itemize}
+    \item \textbf{Literature Review and Background Research:} Conduct a systematic review of academic papers, technical reports, and existing implementations of Visual-Inertial Navigation Systems (VINS), drone navigation frameworks, and swarm robotics. 
+    
+    \textit{Purpose:} Understand current capabilities, identify common limitations (e.g., drift errors, processing latency, environmental constraints), and recognize trends in drone-based navigation research. 
+    
+    \textit{Outcome:} A consolidated knowledge base to guide technical decisions.
+    
+    \item \textbf{Gap Identification and Problem Statement:} Based on literature findings, identify gaps in current research, such as limited performance in GPS-denied environments or scalability issues in swarm navigation. Formulate a clear problem statement that encapsulates these gaps.
+    
+    \item \textbf{Requirement Gathering:} Define functional requirements (e.g., real-time localization, marker-based pose estimation, swarm coordination) and non-functional requirements (e.g., low computational latency, high robustness against sensor noise).
+    
+    \item \textbf{Project Proposal Development:} Prepare a formal proposal containing objectives, methodology, scope, anticipated challenges, resource needs, and success metrics. This document serves as the agreement point before moving into technical work.
+\end{itemize}
+
+\subsubsection{Phase 2: Resource Gathering}
+This phase ensures that all essential hardware, datasets, algorithms, and software platforms are prepared before development begins. It prevents delays due to missing components later.
+
+\begin{itemize}
+    \item \textbf{Model Selection:} Review and shortlist open-source and proprietary VINS algorithms such as VINS-Mono, ORB-SLAM3, or VINS Fusion. 
+    
+    \textit{Selection Criteria:} Accuracy, computational efficiency, ease of integration, hardware requirements.
+    
+    \item \textbf{Dataset Acquisition:} Obtain benchmark datasets (e.g., EuRoC MAV, KITTI) for algorithm testing and training. Additionally, plan custom dataset collection using drone-mounted cameras and IMUs in varied environments. 
+
+     \textit{Purpose:} Ensure the models are tested in scenarios similar to real deployment conditions.
+
+    \item \textbf{Hardware Resource Gathering:} Identify and procure all necessary hardware components such as drones, cameras, IMUs, microcontrollers, onboard computers (e.g., Jetson Nano, Raspberry Pi), servos, and communication modules. Ensure all devices meet the project’s technical specifications and are compatible with planned software platforms.
+    
+    \textit{Purpose:} Prevent hardware shortages or mismatches during integration and testing.
+    
+    \item \textbf{Tool and Platform Setup:} Install and configure simulation platforms (Gazebo, AirSim, ROS), development environments (Python, C++), and supporting libraries (OpenCV, Eigen, g2o). 
+    
+    \textit{Hardware setup:} Ensure the drone’s onboard computer and peripheral sensors are functional and calibrated.
+\end{itemize}
+
+\subsubsection{Phase 3: Model Evaluation}
+Here, shortlisted models are rigorously tested under controlled conditions to determine the best candidate for real-world integration.
+
+\begin{itemize}
+    \item \textbf{Platform-Based Testing:} Deploy each selected VINS algorithm in simulated environments, replicating varied real-world conditions such as poor lighting, dynamic objects, and fast motion.
+    \item \textbf{Performance Analysis:} Evaluate metrics such as Absolute Trajectory Error (ATE), Relative Pose Error (RPE), frame processing rate (FPS), and robustness under sensor noise. 
+    
+    \textit{Purpose:} Identify which model consistently meets or exceeds performance thresholds.
+    
+    \item \textbf{Comparative Evaluation:} Rank models according to performance scores and choose the most suitable candidate, justifying the selection with quantitative data.
+\end{itemize}
+
+\subsubsection{Phase 4: Drone Integration}
+This stage focuses on implementing the chosen VINS system into a physical drone and testing its operational performance.
+
+\begin{itemize}
+\item \textbf{Drone Assembly and Implementation:} Assemble the drone hardware (frames, motors, sensors, communication modules) and integrate all electronic components. Ensure proper wiring, power distribution, and mechanical stability before software integration.
+    \item \textbf{Algorithm Implementation:} Port the selected VINS model into the drone’s onboard computing system (e.g., NVIDIA Jetson Nano, Raspberry Pi 4) while ensuring real-time execution.
+    \item \textbf{VINS and Flight Controller Integration:} Interface the VINS output with the drone’s flight control system (e.g., PX4, ArduPilot) so that navigation decisions are directly informed by visual-inertial data.
+    \item \textbf{Flight Testing:} Conduct a series of indoor and outdoor test flights in different conditions: 
+    \begin{itemize}
+        \item Low light
+        \item High wind
+        \item GPS-denied areas
+    \end{itemize}
+    Record performance metrics and operational stability for further refinement.
+\end{itemize}
+
+\subsubsection{Phase 5: Model Improvements and Drone Swarm Exploration}
+Once a working prototype is validated, efforts shift toward improving robustness and extending functionality to swarm scenarios.
+
+\begin{itemize}
+    \item \textbf{Limitation Analysis:} Use flight logs and recorded datasets to identify recurring problems such as drift, latency, or unstable tracking.
+    \item \textbf{System Optimization:} Apply algorithmic improvements (e.g., better feature tracking, adaptive IMU calibration) and hardware enhancements (e.g., more powerful onboard processors).
+    \item \textbf{Pose Estimation with Markers:} Integrate marker-based localization (e.g., AprilTags, ArUco markers) to assist pose estimation when visual features are scarce.
+    \item \textbf{Swarm Coordination Exploration:} Begin experimental swarm operations, focusing on:
+    \begin{itemize}
+        \item Inter-drone communication
+        \item Formation control
+        \item Collaborative mapping and navigation
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Phase 6: Documentation and Dissemination}
+Final phase ensures that all technical, operational, and research details are preserved and communicated effectively.
+
+\begin{itemize}
+    \item \textbf{Technical Documentation:} Prepare exhaustive documentation covering system architecture, integration steps, source code references, and testing methodologies.
+    \item \textbf{Demonstration:} Organize a live or recorded demonstration showing the system’s capabilities in real flight and/or swarm scenarios.
+    \item \textbf{Research Publications:} Compile results into conference papers or journal articles to share findings with the academic and professional community.
+    \item \textbf{Final Reports:} Produce a complete project report including methodology, results, discussion, limitations, and future work recommendations.
+\end{itemize}
+
+\subsection{Proposed Task Allocation}
+
+The project tasks are distributed among the three team members to ensure equitable workload, with each member taking primary responsibility for specific sub-tasks while maintaining awareness of all aspects of the system. This structure promotes collaboration, accountability, and efficient progress across all phases.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{Task allocation among team members for all project phases.}
+\begin{tabular}{|p{2cm}|p{4.3cm}|p{4.3cm}|p{4.3cm}|}
+\hline
+\textbf{Phase} & \textbf{Akindu} & \textbf{Rashmi} & \textbf{Tishan} \\
+\hline
+
+\textbf{Phase 1: Problem Formulation \& Requirement Analysis} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Literature review on geometric SLAM frameworks and VINS methods
+  \item Summarize historical approaches and key developments
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Literature review on deep learning-based object detection and dynamic scene understanding
+  \item Highlight limitations and recent advances
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Literature review on UAV navigation applications, system constraints, and swarm coordination
+  \item Consolidate insights, formulate problem statement, and draft initial requirements
+\end{itemize} \\
+\hline
+
+\textbf{Phase 2: Resource Gathering} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Shortlist VINS and SLAM algorithms
+  \item Set up initial software environments and dependencies
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Procure, assemble, and calibrate all hardware components including cameras, IMUs, and embedded computers
+  \item Verify compatibility
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Collect, preprocess, and organize benchmark datasets (EuRoC MAV, TUM-VI, KITTI)
+  \item Configure simulation environments (Gazebo, AirSim, ROS)
+  \item Document setup procedures
+\end{itemize} \\
+\hline
+
+\textbf{Phase 3: Model Evaluation} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Deploy candidate VINS models in simulation
+  \item Evaluate accuracy metrics (ATE, RPE) and frame processing rates
+  \item Generate performance charts
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Test models with hardware-in-the-loop
+  \item Monitor CPU/GPU usage, identify bottlenecks
+  \item Ensure stable execution
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Perform comparative evaluation, record robustness metrics
+  \item Run ablation experiments (dynamic-object masking, mono vs stereo)
+  \item Summarize results in tables
+\end{itemize} \\
+\hline
+
+\textbf{Phase 4: Drone Integration} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Implement selected VINS system on drone’s onboard computer
+  \item Optimize code for real-time execution
+  \item Integrate with ROS 2 nodes
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Assemble and calibrate drone hardware
+  \item Integrate sensors, flight controller (PX4), and communication modules
+  \item Verify power distribution and mechanical stability
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Conduct indoor and outdoor flight tests
+  \item Record trajectory data, evaluate performance metrics
+  \item Ensure safe operation under varied conditions (low light, GPS-denied, high wind)
+\end{itemize} \\
+\hline
+
+\textbf{Phase 5: Model Improvement \& Swarm Exploration} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Implement algorithmic enhancements: dynamic feature filtering, adaptive IMU calibration, photometric corrections
+  \item Update bundle adjustment parameters
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Upgrade hardware components as needed
+  \item Test multi-drone communication protocols and formation control strategies
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Analyze flight logs and evaluate pose estimation improvements
+  \item Conduct swarm experiments including collaborative mapping and coordinated navigation
+  \item Document results
+\end{itemize} \\
+\hline
+
+\textbf{Phase 6: Documentation \& Dissemination} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Prepare technical documentation for all algorithms, integration steps, and software modules
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Prepare hardware integration manuals, calibration procedures, and experimental setup documentation
+\end{itemize} &
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, partopsep=0pt]
+  \item Compile final project report, create visualizations
+  \item Organize demonstration materials
+  \item Prepare publications for academic dissemination
+\end{itemize} \\
+\hline
+
+\end{tabular}
+\end{table}
+
+
+\subsection{Summary of Phases}
+Shown in the following Table is a summary of project activities in each phase of the project.
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{|p{3cm}|p{5.5cm}|p{5.5cm}|}
+\hline
+\textbf{Phase} & \textbf{Main Focus} & \textbf{Expected Outcomes} \\ \hline
+1. Problem Formulation & Define problem, requirements, proposal & Clear problem statement, project proposal, defined scope \\ \hline
+2. Resource Gathering & Collect models, datasets, platforms & Ready-to-use algorithms, datasets, and simulation environments \\ \hline
+3. Model Evaluation & Test and compare VINS models & Performance metrics, best model selected \\ \hline
+4. Drone Integration & Implement and test VINS on hardware & Functional VINS-enabled drone with tested navigation \\ \hline
+5. Model Improvement \& Swarm Exploration & Optimize system, extend to swarm & Improved robustness, initial swarm coordination results \\ \hline
+6. Documentation \& Dissemination & Reporting and sharing findings & Technical documentation, publications, final project report \\ \hline
+\end{tabular}
+\caption{Summary of Methodology Phases with Focus and Expected Outcomes.}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, trim=1.6cm 4cm 1.6cm 1.8cm, clip]{images/gantt_chart.pdf}
+    \caption{Research Timeline}
+    \label{fig:gantt_chart}
+\end{figure}
