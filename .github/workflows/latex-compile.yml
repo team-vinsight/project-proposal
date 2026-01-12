@@ -1,15 +1,15 @@
-name: Build LaTeX Document
+name: Build and Deploy LaTeX
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+
+permissions:
+  contents: write # Required to allow pushing to the gh-pages branch
 
 jobs:
-  build_latex:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -19,11 +19,19 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-          # The action uses latexmk by default, which handles bibliography (biber) automatically
 
-      - name: Upload PDF Artifact
-        uses: actions/upload-artifact@v4
+      - name: Prepare Deployment Files
+        run: |
+          mkdir public
+          # Copy the PDF to the public folder
+          cp main.pdf public/project-proposal.pdf
+          
+          # Create a simple index.html that redirects to the PDF immediately
+          echo '<!DOCTYPE html><html><head><title>Redirecting...</title><meta http-equiv="refresh" content="0; url=project-proposal.pdf" /></head><body><p>Opening PDF... <a href="project-proposal.pdf">Click here</a></p></body></html>' > public/index.html
+
+      # Deploys the 'public' folder to the 'gh-pages' branch
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: Project-Proposal-PDF
-          path: main.pdf
-          retention-days: 5
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
