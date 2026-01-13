@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'README.md'
 
 permissions:
   contents: write # Required to allow pushing to the gh-pages branch

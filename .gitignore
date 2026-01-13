@@ -1,0 +1,19 @@
+# LaTeX build files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.pdf
+
+# Editors
+.vscode/
+*.swp
